@@ -1,293 +1,1024 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wild West Auto Transport</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <title>D.A.C Detroit Auto Carriers - To every direction</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="icon" href="./assets/images/carrier.png" type="image/png">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+  <!--
+    - preload images
+  -->
 </head>
-<body>
-<!-- Header Section -->
-<header>
-  <div class="header-content">
-    <!-- Grupăm textele ca să fie pe linie cu logo-ul -->
-    <div class="header-text">
-      <h1>Detroit Auto Carriers</h1>
+
+<body id="top">
+
+<!--
+  - #HEADER
+-->
+
+<header class="header" data-header>
+  <div class="container">
+
+    <h1>
+      <a href="#" class="logo">Detroit Auto Carriers</a>
+    </h1>
+    <nav class="navbar" data-navbar>
+
+      <div class="navbar-top">
+        <a href="#" class="logo-container">
+          <span class="logo-desktop">D.A.C Detroit Auto Carriers</span>
+          <span class="logo-mobile">D.A.C</span>
+        </a>
+
+        <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+      <ul class="navbar-list">
+
+        <li class="navbar-item">
+          <a href="#home" class="navbar-link" data-nav-link>
+            <span>Home</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#about" class="navbar-link" data-nav-link>
+            <span>About</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#service" class="navbar-link" data-nav-link>
+            <span>Services</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#zones" class="navbar-link" data-nav-link>
+            <span>Locations</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a href="#blog" class="navbar-link" data-nav-link>
+            <span>Our Team</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a href="#project" class="navbar-link" data-nav-link>
+            <span>Gallery</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        <li class="navbar-item">
+          <a href="#Posts" class="navbar-link" data-nav-link>
+            <span>Our Posts</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        <li class="navbar-item">
+          <a href="#newsletter" class="navbar-link" data-nav-link>
+            <span>Contact</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a href="#formular" class="navbar-link" data-nav-link>
+            <span>Get a Quote</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider">
+     <span class="icon sun"><ion-icon name="sunny-outline"></ion-icon></span>
+     <span class="icon moon"><ion-icon name="moon-outline"></ion-icon></span>
+    </span>
+      </label>
     </div>
 
-    <!-- Meniu -->
-    <button class="burger-btn" aria-label="Toggle menu">
-      <span class="burger-line"></span>
-      <span class="burger-line"></span>
-      <span class="burger-line"></span>
+    <div class="header-contact">
+
+
+      <a href="tel:0744443457">
+        <div class="contact-icon">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+      </a>
+
+    </div>
+
+
+    <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+      <ion-icon name="menu-outline"></ion-icon>
     </button>
-    <nav>
-      <ul class="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#team">Our Crew</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#reviews">Trails Talks</a></li>
-        <li><a href="gallery">Trails Gallery</a></li>
-        <li><a href="#calculator">Calculator</a></li>
-        <li><a href="#frontier-trails">Frontier Trails</a></li>
-      </ul>
-    </nav>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+
   </div>
 </header>
 
-<!-- Home Section -->
-<section id="home">
-  <h2>
-    <img src="assets/images/guns.png" alt="" class="section-icon">
-    <span class="section-part">Home</span>
-    <img src="assets/images/guns.png" alt="" class="section-icon">
-  </h2>
-  <p>Trust us to haul your vehicles across the plains with the speed of a stagecoach and the reliability of a trusty steed. From saloons to modern cities, we deliver!</p>
-</section>
 
-<!-- Services Section -->
-<section id="services">
-  <h2>
-    <img src="assets/images/carriage.png" alt="Carriage icon" class="section-icon">
-    <span class="section-part">Services</span>
-    <img src="assets/images/carriage.png" alt="Carriage icon" class="section-icon">
-  </h2>
-  <div class="services-grid">
-    <div class="service-item">
-      <h3>Open Transport</h3>
-      <p>Like a wagon train under the open sky, we offer affordable open transport for your vehicles.</p>
-    </div>
-    <div class="service-item">
-      <h3>Enclosed Transport</h3>
-      <p>For your prized stallions, our enclosed trailers provide top-notch protection.</p>
-    </div>
-    <div class="service-item">
-      <h3>Door-to-Door Delivery</h3>
-      <p>We ride straight to your doorstep, deliverin' your vehicle right where you need it.</p>
-    </div>
-  </div>
-</section>
 
-<!-- Our Team Section -->
-<section id="team">
-  <h2>
-    <img src="assets/images/cowboy.png" alt="Cowboy icon" class="section-icon">
-    <span class="section-part">Our</span>
-    <span class="section-part">Crew</span>
-    <img src="assets/images/sheriff.png" alt="Sheriff star" class="section-icon">
-  </h2>
-  <div class="team-grid">
-    <div class="team-card">
-      <div class="wanted-poster">
-        <h3>WANTED FOR RELIABLE RIDES</h3>
-        <img src="assets/images/Lucian.jpg" alt="Driver 1" class="driver-photo">
-        <h4>John "The Wrangler" Doe</h4>
-        <p>Lead Driver</p>
-        <p class="reward">REWARD: Reliable Delivery</p>
+
+
+<main>
+  <article>
+
+    <!--
+      - #HERO
+    -->
+
+    <section class="section hero" aria-label="home" id="home"
+             style="background-image: url('./assets/images/Detroit_Auto_Carriers.png')">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <h2 class="h1 hero-title">
+            <span class="span">To Every</span> Direction
+          </h2>
+
+          <p class="hero-text">
+            D.A.C Detroit Auto Carriers – your trusted partner for fast, safe, and reliable car transport.
+          </p>
+
+          <a href="#service" class="btn-outline">View Services</a>
+
+          <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
+               class="hero-shape shape-1">
+
+          <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
+               class="hero-shape shape-2">
+
+        </div>
+
       </div>
-    </div>
-    <div class="team-card">
-      <div class="wanted-poster">
-        <h3>WANTED FOR TRUSTY PAPERWORK</h3>
-        <img src="assets/images/Ramona.jpg" alt="Driver 2" class="driver-photo">
-        <h4>Jane "Quickdraw" Smith</h4>
-        <p>Senior Accountant</p>
-        <p class="reward">REWARD: Safe Haulin'</p>
+    </section>
+
+
+
+
+
+    <!--
+      - #ABOUT
+    -->
+
+    <section class="section about" id="about" aria-label="about">
+      <div class="container">
+
+        <figure class="about-banner img-holder" style="--width: 400; --height: 720;">
+          <img src="./assets/images/driver1.jpg" width="400" height="720" loading="lazy" alt=""
+               class="img-cover">
+
+          <img src="./assets/images/car_shipments.png" width="260" height="170" loading="lazy" alt=""
+               class="abs-img abs-img-1">
+
+          <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt=""
+               class="abs-img abs-img-2">
+        </figure>
+
+        <div class="about-content">
+
+          <p class="section-subtitle">Why Choose Us</p>
+
+          <h2 class="h2 section-title">Delivering Cars with Care, Precision, and Trust</h2>
+
+          <p class="section-text">
+            At Detroit Auto Carriers, we specialize in safe and reliable vehicle transport, ensuring every car reaches its destination on time and in perfect condition
+          </p>
+
+          <ul class="about-list">
+
+            <li class="about-item">
+              <div class="about-icon">
+                <ion-icon name="chevron-forward"></ion-icon>
+              </div>
+
+              <p class="about-text">
+                Go beyond transport — we keep cars moving and businesses thriving.
+              </p>
+            </li>
+
+            <li class="about-item">
+              <div class="about-icon">
+                <ion-icon name="chevron-forward"></ion-icon>
+              </div>
+
+              <p class="about-text">
+                Reliable transport built on innovation, dedication, and technology. Ready. Set. Safe.
+              </p>
+            </li>
+
+            <li class="about-item">
+              <div class="about-icon">
+                <ion-icon name="chevron-forward"></ion-icon>
+              </div>
+
+              <p class="about-text">
+                We take pride in serving our customers with safety and passion.
+              </p>
+            </li>
+
+            <li class="about-item">
+              <div class="about-icon">
+                <ion-icon name="chevron-forward"></ion-icon>
+              </div>
+
+              <p class="about-text">
+                Imagination what we can easily see is only a small percentage.
+              </p>
+            </li>
+
+            <li class="about-item">
+              <div class="about-icon">
+                <ion-icon name="chevron-forward"></ion-icon>
+              </div>
+
+              <p class="about-text">
+                Delivering cars with safety, quality, and professional care.
+              </p>
+            </li>
+
+            <li class="about-item">
+              <div class="about-icon">
+                <ion-icon name="chevron-forward"></ion-icon>
+              </div>
+
+              <p class="about-text">
+                The quality shows in every move we make where business lives.
+              </p>
+            </li>
+
+          </ul>
+
+        </div>
+
       </div>
-    </div>
-    <!-- Add more team cards as needed -->
-  </div>
-</section>
-<!-- Reviews Section -->
-<!-- Reviews Section -->
-<section id="reviews">
-  <h2>
-    <img src="assets/images/score.png" alt="Cowboy hat" class="section-icon">
-    <span class="section-part">Trail</span>
-    <span class="section-part">Talks</span>
-    <img src="assets/images/score.png" alt="Cowboy hat" class="section-icon">
-  </h2>
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="review-card">
-        <img src="assets/images/client1.jpg" alt="Client 1" class="review-photo">
-        <p>"These folks hauled my Mustang faster than a runaway stallion! Much obliged."</p>
-        <h4>- Billy "Sixshot" Thompson</h4>
+    </section>
+
+
+
+
+
+    <!--
+      - #SERVICE
+    -->
+
+    <section class="section service" id="service" aria-label="service">
+      <div class="container">
+
+        <p class="section-subtitle">All Services</p>
+
+        <h2 class="h2 section-title">Trusted For Our Services</h2>
+
+        <p class="section-text">
+          Trusted by clients across the country, Detroit Auto Carriers delivers exceptional vehicle transport services with safety and reliability at the core.
+          Our advanced systems and experienced team ensure smooth operations, while our dedication to professionalism guarantees that every car is handled with the utmost care.
+          Whether you need individual deliveries or large-scale logistics solutions, we combine technology, expertise, and passion to exceed expectations and make every journey worry-free."
+        </p>
+
+        <ul class="service-list grid-list">
+
+          <li>
+            <div class="service-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/Fast_Transport.png" width="80" height="60" loading="lazy" alt="Truck">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">01</span> Urgent Vehicle Shipping
+              </h3>
+
+              <p class="card-text">
+                When time is of the essence, our urgent transport service ensures your vehicle reaches its destination as quickly as possible.
+                We prioritize your shipment and rely on a network of trusted carriers to guarantee a fast and secure delivery.
+              </p>
+
+              <a href="#" class="btn-link">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="service-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/door2.png" width="104" height="90" loading="lazy" alt="Ship">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">02</span> Door-to-Door Delivery
+              </h3>
+
+              <p class="card-text">
+                Our Door-to-Door service provides the ultimate convenience, handling everything from pickup at your location to direct delivery at your final destination.
+                You can skip the hassle of remote terminals and enjoy a completely stress-free experience. We manage all the details so you don't have to.
+              </p>
+
+              <a href="#" class="btn-link">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="service-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/Pic_Carrier.png" width="60" height="60" loading="lazy" alt="Carrier">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">03</span> Open Carrier Transport
+              </h3>
+
+              <p class="card-text">
+                Our Open Carrier service is the most popular and cost-effective shipping option.
+                Your car is securely loaded onto an open trailer, fully insured for a smooth journey.
+                It's the perfect balance of affordability and dependability, ideal for most standard vehicle shipments.
+              </p>
+
+              <a href="#" class="btn-link">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="service-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/Enclosed_Car.png" width="50" height="60" loading="lazy" alt="Train">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">04</span> Enclosed Car Transport
+              </h3>
+
+              <p class="card-text">
+                For luxury, exotic, and classic cars, our enclosed transport service provides maximum protection from all elements, including weather and road debris.
+                Your vehicle is safely secured inside a sealed trailer, ensuring it arrives in the exact pristine condition it was in when it was picked up.
+                It's the premium choice for absolute peace of mind.
+              </p>
+
+              <a href="#" class="btn-link">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="service-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/Secure_Vehicle.png" width="63" height="60" loading="lazy" alt="Trolley">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">05</span> Secure Vehicle Storage
+              </h3>
+
+              <p class="card-text">
+                Our storage service provides a safe, monitored location for your vehicle before or after transport.
+                Offering both short-term and long-term options, our secure facility gives you complete peace of mind when you need a little extra time.
+                Your car is kept in a climate-controlled environment, ensuring it remains in perfect condition.
+              </p>
+
+              <a href="#" class="btn-link">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="service-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/Specialized_Vehicle.png" width="46" height="60" loading="lazy" alt="Paper">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">06</span> Specialized Vehicle Shipping
+              </h3>
+
+              <p class="card-text">
+                For vehicles that require special care, our specialized shipping service handles everything from rare cars and prototypes to non-running vehicles.
+                We use custom equipment and expert handling to ensure your unique vehicle is transported safely and securely.
+                It's the ideal choice for any vehicle that needs extra attention.
+              </p>
+
+              <a href="#" class="btn-link">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+        </ul>
+
       </div>
-      <div class="review-card">
-        <img src="assets/images/client2.jpg" alt="Client 2" class="review-photo">
-        <p>"Safe, sound, and on time. Just like a cowboy’s word, true and steady."</p>
-        <h4>- Clara "Dusty Boots" James</h4>
+    </section>
+
+
+
+
+
+    <!--
+      - #FEATURE
+    -->
+
+    <section class="section zone" aria-label="zones" id="zones">
+      <div class="container">
+
+        <div class="title-wrapper">
+          <div>
+            <p class="section-subtitle">Where do we activate?</p>
+            <h2 class="h2 section-title">Here are our locations:</h2>
+          </div>
+        </div>
+
+        <ul class="zone-list">
+          <li>
+            <div class="zone-card" style="--card-number: '01'">
+              <div class="card-icon">
+                <img src="./assets/images/michigan.png" width="72" height="91" alt="">
+              </div>
+              <h3 class="h3 card-title">Michigan</h3>
+              <p class="card-text"></p>
+            </div>
+          </li>
+
+          <li>
+            <div class="zone-card" style="--card-number: '02'">
+              <div class="card-icon">
+                <img src="./assets/images/texas.png" width="94" height="94" alt="">
+              </div>
+              <h3 class="h3 card-title">Texas</h3>
+              <p class="card-text"></p>
+            </div>
+          </li>
+
+          <li>
+            <div class="zone-card" style="--card-number: '03'">
+              <div class="card-icon">
+                <img src="./assets/images/Chicago.png" width="93" height="93" alt="">
+              </div>
+              <h3 class="h3 card-title">Chicago</h3>
+              <p class="card-text"></p>
+            </div>
+          </li>
+        </ul>
+
       </div>
-      <div class="review-card">
-        <img src="assets/images/client2.jpg" alt="Client 2" class="review-photo">
-        <p>"Safe, sound, and on time. Just like a cowboy’s word, true and steady."</p>
-        <h4>- Clara "Dusty Boots" James</h4>
+      <div id="zone-tooltip" style="display:none; position:absolute; padding:12px 15px; background:#fff; border:1px solid #ccc; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2); pointer-events:none; z-index:999;">
+        <p id="tooltip-city" style="font-weight:bold; margin:0 0 5px 0;"></p>
+        <p id="tooltip-cars" style="margin:0 0 3px 0;">🚗 Cars Delivered: 0</p>
+        <p id="tooltip-clients" style="margin:0;">👥 Clients Served: 0</p>
       </div>
-      <div class="review-card">
-        <img src="assets/images/client2.jpg" alt="Client 2" class="review-photo">
-        <p>"Safe, sound, and on time. Just like a cowboy’s word, true and steady."</p>
-        <h4>- Clara "Dusty Boots" James</h4>
+    </section>
+    <!--
+      - #PROJECT
+    -->
+
+    <section class="section project" aria-label="project" id="project">
+      <div class="container">
+
+        <p class="section-subtitle">Gallery</p>
+
+        <h2 class="h2 section-title">Some of our pics</h2>
+
+        <p class="section-text">
+          Take a closer look at Detroit Auto Carriers in action. Our gallery highlights the dedication, technology, and care that go into every vehicle we transport.
+          See firsthand how we combine experience and innovation to provide seamless, trustworthy auto transport services.
+        </p>
+
+        <ul class="project-list">
+
+          <li class="project-item">
+            <div class="project-card">
+
+              <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                <img src="./assets/images/project-1.jpg" width="397" height="352" loading="lazy"
+                     alt="Warehouse inventory" class="img-cover">
+              </figure>
+
+
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-card">
+
+              <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                <img src="./assets/images/project-2.jpg" width="397" height="352" loading="lazy"
+                     alt="Warehouse inventory" class="img-cover">
+              </figure>
+
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-card">
+
+              <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                <img src="./assets/images/project-3.jpg" width="397" height="352" loading="lazy"
+                     alt="Warehouse inventory" class="img-cover">
+              </figure>
+
+
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-card">
+
+              <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                <img src="./assets/images/project-4.jpg" width="397" height="352" loading="lazy"
+                     alt="Warehouse inventory" class="img-cover">
+              </figure>
+
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-card">
+
+              <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                <img src="./assets/images/project-5.jpg" width="397" height="352" loading="lazy"
+                     alt="Warehouse inventory" class="img-cover">
+              </figure>
+
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-card">
+
+              <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                <img src="./assets/images/project-6.jpg" width="397" height="352" loading="lazy"
+                     alt="Warehouse inventory" class="img-cover">
+              </figure>
+            </div>
+          </li>
+
+        </ul>
+
       </div>
-      <div class="review-card">
-        <img src="assets/images/client2.jpg" alt="Client 2" class="review-photo">
-        <p>"Safe, sound, and on time. Just like a cowboy’s word, true and steady."</p>
-        <h4>- Clara "Dusty Boots" James</h4>
+    </section>
+
+
+
+
+
+    <!--
+      - #BLOG
+    -->
+
+    <section class="section blog" aria-label="blog" id="blog">
+      <div class="container">
+
+        <p class="section-subtitle">Our Team</p>
+        <h2 class="h2 section-title">Meet our Heroes</h2>
+        <p class="section-text">
+          Our team is the heart of Detroit Auto Carriers.
+          Each member brings dedication, skill, and a passion for excellence to ensure every transport is handled with care. Get to know the people who make our services reliable, innovative, and customer-focused every single day.
+        </p>
+        <ul class="blog-list grid-list">
+
+          <!-- Lucian -->
+          <li>
+            <div class="blog-card">
+              <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                <img src="./assets/images/Lucian.jpg" width="770" height="500" loading="lazy" alt="Lucian"
+                     class="img-cover">
+              </figure>
+              <div class="card-content">
+                <time class="card-meta" datetime="2025-08-02">
+                  <span class="span">01</span> Lucian
+                </time>
+                <h3 class="h3 card-title">
+                  <a href="#">At the end of the day, going forward, a new normal that has evolved from. your only logistic partner.</a>
+                </h3>
+                <p class="card-text">
+                  New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit.
+                </p>
+                <a href="#" class="btn-link read-more-btn"
+                   data-text="So this is our valuable member Lucian">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">Read More</span>
+                </a>
+                <p class="extra-text" style="display:none; margin-top:10px;"></p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Jean Paul -->
+          <li>
+            <div class="blog-card">
+              <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                <img src="./assets/images/Paul.jpg" width="770" height="500" loading="lazy" alt="Jean Paul"
+                     class="img-cover">
+              </figure>
+              <div class="card-content">
+                <time class="card-meta" datetime="2025-08-02">
+                  <span class="span">02</span> Jean Paul
+                </time>
+                <h3 class="h3 card-title">
+                  <a href="#">At the end of the day, going forward, a new normal that has evolved from. your only logistic partner.</a>
+                </h3>
+                <p class="card-text">
+                  New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit.
+                </p>
+                <a href="#" class="btn-link read-more-btn"
+                   data-text="So this is our valuable member Jean Paul">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">Read More</span>
+                </a>
+                <p class="extra-text" style="display:none; margin-top:10px;"></p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Marian -->
+          <li>
+            <div class="blog-card">
+              <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                <img src="./assets/images/Marian.jpg" width="770" height="500" loading="lazy" alt="Marian"
+                     class="img-cover">
+              </figure>
+              <div class="card-content">
+                <time class="card-meta" datetime="2022-08-02">
+                  <span class="span">03</span> Marian
+                </time>
+                <h3 class="h3 card-title">
+                  <a href="#">At the end of the day, going forward, a new normal that has evolved from. your only logistic partner.</a>
+                </h3>
+                <p class="card-text">
+                  New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit.
+                </p>
+                <a href="#" class="btn-link read-more-btn"
+                   data-text="So this is our valuable member Marian">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">Read More</span>
+                </a>
+                <p class="extra-text" style="display:none; margin-top:10px;"></p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Ramona -->
+          <li>
+            <div class="blog-card">
+              <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                <img src="./assets/images/Ramona.jpg" width="770" height="500" loading="lazy" alt="Ramona"
+                     class="img-cover">
+              </figure>
+              <div class="card-content">
+                <time class="card-meta" datetime="2025-08-21">
+                  <span class="span">04</span> Ramona
+                </time>
+                <h3 class="h3 card-title">
+                  <a href="#">Going forward, a new normal that has evolved from generation. moving your products across all borders.</a>
+                </h3>
+                <p class="card-text">
+                  New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit.
+                </p>
+                <a href="#" class="btn-link read-more-btn"
+                   data-text="So this is our valuable member Ramona">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">Read More</span>
+                </a>
+                <p class="extra-text" style="display:none; margin-top:10px;"></p>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
       </div>
-      <div class="review-card">
-        <img src="assets/images/client3.jpg" alt="Client 3" class="review-photo">
-        <p>"Best haulin’ in the Wild West. My pickup rode smoother than a saloon piano tune."</p>
-        <h4>- Sheriff McGraw</h4>
+    </section>
+
+    <!--
+      - #Posts
+    -->
+    <section class="section Posts" aria-label="Posts" id="Posts">
+      <div class="container">
+
+        <p class="section-subtitle">Our Posts</p>
+
+        <h2 class="h2 section-title">Latest News & Posts</h2>
+
+        <p class="section-text">
+          Stay informed with our latest articles, insights, and updates from the transport and logistics industry.
+        </p>
+        <ul class="grid-list">
+
+          <li>
+            <div class="posts-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">01</span> From Motor City to Lone Star: Detroit Auto Carriers Connects Michigan to Texas with Ease
+              </h3>
+
+              <p class="card-text" data-initial-text="At Detroit Auto Carriers, we don't just move vehicles; we connect communities and economies. A significant part of our mission is bridging the distance between the automotive legacy of Michigan and the expansive, booming market of Texas. With a dedicated hub in Texas, we ensure that your vehicles make the long journey safely and efficiently.">
+                At Detroit Auto Carriers, we don't just move vehicles; we connect communities and economies. A significant part of our mission is bridging the distance between the automotive legacy of Michigan and the expansive, booming market of Texas.
+                With a dedicated hub in Texas, we ensure that your vehicles make the long journey safely and efficiently.
+              </p>
+
+              <a href="#" class="btn-link" data-details="The Michigan-Texas Connection: The demand for reliable transport between Michigan and Texas is constant, driven by manufacturing, relocation, and a vibrant used car market. This route, though long, is one of our specialties. Our drivers are experienced in navigating diverse terrains and climates, from the Great Lakes region down to the Gulf Coast. How We Ensure a Smooth Journey: Dedicated Texas Presence: Our operational base in Texas allows for optimized route planning and quicker local deliveries. Experienced Drivers: Specialized teams handle these longer hauls, ensuring consistent speed and safety. Advanced Tracking: You can monitor your vehicle's progress every mile of the way, getting real-time updates from pickup in Michigan to delivery in Texas.">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="posts-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">02</span>  Navigating the Heartland: Why Detroit Auto Carriers is Your Top Choice for Midwest Shipments.
+              </h3>
+
+              <p class="card-text" data-initial-text="When it comes to vehicle transport, navigating the vast network of American roads requires precision, reliability, and local expertise. At Detroit Auto Carriers, we pride ourselves on being the trusted name, especially for those looking to ship vehicles across the heartland. With strategic hubs in Michigan and Chicago, we're perfectly positioned to offer seamless and efficient service.">
+                When it comes to vehicle transport, navigating the vast network of American roads requires precision, reliability, and local expertise.
+                At Detroit Auto Carriers, we pride ourselves on being the trusted name, especially for those looking to ship vehicles across the heartland.
+                With strategic hubs in Michigan and Chicago, we're perfectly positioned to offer seamless and efficient service.
+              </p>
+
+              <a href="#" class="btn-link" data-details="Why Local Expertise Matters (Michigan & Chicago): Our presence in Michigan means we understand the specific logistics of automotive heartland. From Detroit's manufacturing hubs to the suburban sprawl, our drivers know these routes intimately. Similarly, our Chicago location offers a critical gateway, linking the industrial Midwest to broader national networks. This isn't just about driving; it's about understanding state regulations, avoiding common bottlenecks, and delivering on time. The Detroit Auto Carriers Difference: Local Knowledge: Our teams on the ground in Michigan and Chicago provide unparalleled insights into regional shipping. Efficiency: Proximity to major interstates and automotive centers allows for quicker pickups and deliveries. Reliability: We minimize delays by anticipating regional challenges, whether it's seasonal weather or traffic patterns.">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="posts-card">
+
+              <div class="card-icon">
+                <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
+              </div>
+
+              <h3 class="h3 card-title">
+                <span class="span">03</span> Beyond the Road: The Technology & Training Driving Detroit Auto Carriers in Chicago
+              </h3>
+
+              <p class="card-text" data-initial-text="In the bustling hub of Chicago, where logistics demand precision, Detroit Auto Carriers stands out by combining seasoned expertise with cutting-edge technology. Our operations in Chicago are a testament to how meticulous planning and continuous driver training ensure every vehicle transport is executed flawlessly.">
+                In the bustling hub of Chicago, where logistics demand precision, Detroit Auto Carriers stands out by combining seasoned expertise with cutting-edge technology.
+                Our operations in Chicago are a testament to how meticulous planning and continuous driver training ensure every vehicle transport is executed flawlessly.
+              </p>
+
+              <a href="#" class="btn-link" data-details="Technology in Motion: Our Chicago hub utilizes the latest advancements in logistics. From optimized route planning software that avoids city congestion to advanced GPS tracking systems, we provide unparalleled transparency. Customers receive real-time updates, knowing exactly where their vehicle is, from pickup in Chicago to its final destination. This technology minimizes delays and maximizes efficiency, especially crucial in a busy metropolitan area. The Backbone: Our Drivers & Training: Technology is only as good as the people behind it. Our drivers operating out of Chicago undergo rigorous training that goes beyond basic driving skills. They are experts in secure loading and unloading procedures, defensive driving in urban environments, and handling diverse vehicle types. Continuous professional development keeps them updated on the latest safety protocols and industry best practices. Benefits of Choosing Our Chicago Services: Real-Time Tracking: Stay informed with precise updates on your vehicle's location. Minimized Delays: Smart routing and experienced drivers reduce transit times. Peace of Mind: Knowing your vehicle is in the hands of trained professionals equipped with the best tools.">
+                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                <span class="span">View Detail</span>
+              </a>
+
+            </div>
+          </li>
+
+        </ul>
+
       </div>
+    </section>
+    <!--
+      - #NEWSLETTER
+    -->
+
+    <section id="newsletter" class="section newsletter" aria-label="newsletter">
+      <div class="container">
+
+        <figure class="newsletter-banner img-holder">
+          <img src="./assets/images/Trucker.png" width="403" height="481" alt="newsletter banner">
+        </figure>
+
+        <div class="newsletter-content">
+
+          <h2 class="h2 section-title wavy-text">
+            <span>Y</span><span>o</span><span>u</span><span> </span>
+            <span>c</span><span>a</span><span>n</span><span>'</span><span>t</span><span> </span>
+            <span>c</span><span>a</span><span>l</span><span>l</span><span>?</span><span> </span>
+            <span>I</span><span>t</span><span> </span>
+            <span>i</span><span>s</span><span> </span><span>o</span<span>k</span><span>a</span><span>y</span>
+            <span>w</span><span>e</span><span> </span>
+            <span>a</span><span>r</span><span>e</span><span> </span>
+            <span>j</span><span>u</span><span>s</span><span>t</span><span> </span>
+            <span>a</span><span>n</span><span> </span><span> </span><span> </span> </span><span> </span>
+            <span>e</span><span>m</span><span>a</span><span>i</span><span>l</span><span> </span>
+            <span>a</span><span>w</span><span>a</span><span>y</span>
+          </h2>
+
+
+          <a href="https://compose.mail.yahoo.com/?to=damuresan954S@yahoo.com&subject=Salut&body=Mesajul%20tau%20aici" target="_blank">
+            <button type="button" class="newsletter-btn" style="margin-top:40px; margin-left:20px;">Contact us now</button>
+          </a>
+
+
+        </div>
+    </section>
+
+  </article>
+
+  <section class="contact-section" aria-label="formular" id="formular">
+    <div class="container">
+
+      <p class="section-subtitle">Our Form</p>
+      <h2 class="h2 section-title">Complete with your datas</h2>
+
+      <p class="section-text">
+        A representative will contact you shortly.
+      </p>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="full_name" class="form-label">Full Name:</label>
+          <input type="text" name="full_name" id="full_name" required placeholder="Your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address:</label>
+          <input type="email" name="email" id="email" required placeholder="example@mail.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number:</label>
+          <input type="tel" name="phone" id="phone" required placeholder="Ex: +1 (555) 123-4567">
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Order Details:</label>
+          <textarea name="message" id="message" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="form-btn">Submit Request</button>
+      </form>
     </div>
+  </section>
+</main>
+
+
+
+
+
+<!--
+  - #FOOTER
+-->
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-top section">
+
+      <div class="footer-brand">
+
+        <a href="#" class="logo wavy-logo">
+          <span>D</span><span>.</span><span>A</span><span>.</span><span>C</span><span>-</span>
+          <span>D</span><span>e</span><span>t</span><span>r</span><span>o</span><span>i</span><span>t</span>
+          <span>A</span><span>u</span><span>t</span><span>o</span> <span>C</span><span>a</span><span>r</span><span>r</span><span>i</span><span>e</span><span>r</span><span>s</span>
+        </a>
+
+        <p class="footer-text glow-text">
+          Many customers across the country trust Detroit Auto Carriers to deliver their vehicles safely, reliably, and on time.
+          Our experienced team combines innovation, care, and professionalism to ensure every transport is seamless.
+        </p>
+        <ul class="social-list">
+          <li><a href="https://wa.me/0744443457" target="_blank" class="social-link"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+
+      </div>
+
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title wavy-text">
+            <span>Q</span><span>u</span><span>i</span><span>c</span><span>k</span> <span>L</span><span>i</span><span>n</span><span>k</span><span>s</span>
+          </p>
+        </li>
+        <li><a href="#" class="footer-link wavy-text"><span>A</span><span>b</span><span>o</span><span>u</span><span>t</span></a></li>
+        <li><a href="#" class="footer-link wavy-text"><span>S</span><span>e</span><span>r</span><span>v</span><span>i</span><span>c</span><span>e</span><span>s</span></a></li>
+        <li><a href="#blog" class="footer-link wavy-text"><span>O</span><span>u</span><span>r</span> <span>T</span><span>e</span><span>a</span><span>m</span></a></li>
+        <li><a href="tel:0744443457" class="footer-link wavy-text"><span>C</span><span>a</span><span>l</span><span>l</span> <span>u</span><span>s</span></a></li>
+        <li><a href="https://compose.mail.yahoo.com/?to=damuresan954S@yahoo.com&subject=Salut&body=Mesajul%20tau%20aici" class="footer-link wavy-text"><span>S</span><span>e</span><span>n</span><span>d</span> <span>u</span><span>s</span> <span>a</span> <span>n</span><span>e</span><span>m</span><span>a</span><span>i</span><span>l</span></a></li>
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title wavy-text">
+            <span>S</span><span>e</span><span>r</span><span>v</span><span>i</span><span>c</span><span>e</span><span>s</span>
+          </p>
+        </li>
+        <li><a href="#" class="footer-link wavy-text"><span>W</span><span>a</span><span>r</span><span>e</span><span>h</span><span>o</span><span>u</span><span>s</span><span>e</span></a></li>
+        <li><a href="#" class="footer-link wavy-text"><span>A</span><span>i</span><span>r</span> <span>F</span><span>r</span><span>e</span><span>i</span><span>g</span><span>h</span><span>t</span></a></li>
+        <li><a href="#" class="footer-link wavy-text"><span>O</span><span>c</span><span>e</span><span>a</span><span>n</span> <span>F</span><span>r</span><span>e</span><span>i</span><span>g</span><span>h</span><span>t</span></a></li>
+        <li><a href="#" class="footer-link wavy-text"><span>R</span><span>o</span><span>a</span><span>d</span> <span>F</span><span>r</span><span>e</span><span>i</span><span>g</span><span>h</span><span>t</span></a></li>
+        <li><a href="#" class="footer-link wavy-text"><span>P</span><span>a</span><span>c</span><span>k</span><span>a</span><span>g</span><span>i</span><span>n</span><span>g</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2025 D.A.C Detroit Auto Carriers. All Rights Reserved by Bodiu
+      </p>
+    </div>
+
   </div>
-</section>
-
-<!-- Gallery Section -->
-<section id="gallery">
-  <h2>
-    <img src="assets/images/gallery.png" alt="Carriage" class="section-icon">
-    <span class="section-part">Trails</span>
-    <span class="section-part">Gallery</span>
-    <img src="assets/images/gallery.png" alt="Carriage" class="section-icon">
-  </h2>
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="gallery-card"><img src="assets/images/gallery1.jpg" alt="Hauling truck"></div>
-      <div class="gallery-card"><img src="assets/images/gallery2.jpg" alt="Car loading"></div>
-      <div class="gallery-card"><img src="assets/images/gallery3.jpg" alt="On the road"></div>
-      <div class="gallery-card"><img src="assets/images/gallery4.jpg" alt="Western landscape"></div>
-    </div>
-  </div>
-</section>
-
-<section id="frontier-trails">
-  <h2>
-    <img src="assets/images/saloon.png" alt="Map icon" class="section-icon">
-    <span class="section-part">Frontier</span>
-    <span class="section-part">Trails</span>
-    <img src="assets/images/saloon1.png" alt="Map icon" class="section-icon">
-  </h2>
-
-  <div class="trails-grid">
-    <div class="trail-card">
-      <img src="assets/images/texas.png" alt="Texas">
-      <h3>Texas Trails</h3>
-      <p>From Dallas to Houston, we ride across the Lone Star State.</p>
-    </div>
-    <div class="trail-card">
-      <img src="assets/images/california.png" alt="California">
-      <h3>California Routes</h3>
-      <p>Golden coast deliveries – Los Angeles, San Diego & beyond.</p>
-    </div>
-    <div class="trail-card">
-      <img src="assets/images/florida.png" alt="Florida">
-      <h3>Florida Roads</h3>
-      <p>From Miami sunshine to Orlando rides – we’ve got it covered.</p>
-    </div>
-    <div class="trail-card hidden">
-      <img src="assets/images/new-york.png" alt="New York">
-      <h3>New York Range</h3>
-      <p>Empire State hauls – from NYC streets to upstate valleys.</p>
-    </div>
-    <div class="trail-card hidden">
-      <img src="assets/images/illinois.png" alt="Illinois">
-      <h3>Illinois Crossroads</h3>
-      <p>Chicago winds to prairie lands, all trails included.</p>
-    </div>
-  </div>
-
-  <div class="trails-btn-wrapper">
-    <button id="showMoreTrails">Show More Trails</button>
-  </div>
-</section>
-<!-- Calculator Section -->
-<section id="calculator">
-  <h2>
-    <img src="assets/images/money-bag.png" alt="Calculator icon" class="section-icon">
-    <span class="section-part">Trail</span>
-    <span class="section-part">Calculator</span>
-    <img src="assets/images/money-bag.png" alt="Calculator icon" class="section-icon">
-  </h2>
-
-  <form id="fareForm" class="calculator-form">
-    <label for="distance">Distance (miles):</label>
-    <input type="number" id="distance" name="distance" required min="1">
-
-    <label for="carType">Type of Vehicle:</label>
-    <select id="carType" name="carType" required>
-      <option value="sedan">Sedan</option>
-      <option value="suv">SUV</option>
-      <option value="truck">Truck</option>
-    </select>
-
-    <button type="submit">Calculate Fare</button>
-  </form>
-
-  <div id="fareResult" class="fare-result"></div>
-</section>
-
-<section id="blogs">
-  <h2>
-    <img src="assets/images/notebook.png" alt="Book icon" class="section-icon">
-    <span class="section-part">The</span>
-    <span class="section-part">Gazette</span>
-    <img src="assets/images/notebook.png" alt="Book icon" class="section-icon">
-  </h2>
-
-  <div class="blogs-grid">
-    <div class="blog-card">
-      <img src="assets/images/blog1.jpg" alt="Blog 1">
-      <h3>The Lone Star Road</h3>
-      <p>Discover how our riders brave Texas highways, from Dallas to El Paso, keeping vehicles safe across dusty trails.</p>
-      <a href="#" class="blog-link">Read More</a>
-    </div>
-
-    <div class="blog-card">
-      <img src="assets/images/blog2.jpg" alt="Blog 2">
-      <h3>Across the Frontier</h3>
-      <p>From wide open plains to busy city streets, see how our crew delivers with cowboy grit and steady wheels.</p>
-      <a href="#" class="blog-link">Read More</a>
-    </div>
-
-    <div class="blog-card">
-      <img src="assets/images/blog3.jpg" alt="Blog 3">
-      <h3>Stagecoach Stories</h3>
-      <p>Behind the wheel, behind the scenes: tales from our trusted drivers who keep the wagons rolling on time.</p>
-      <a href="#" class="blog-link">Read More</a>
-    </div>
-  </div>
-
-  <div class="blogs-btn-wrapper">
-    <button id="loadMoreBlogs">Load More Blogs</button>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>
-    <img src="assets/images/telegraph.png" alt="Telegraph icon" class="section-icon">
-    <span class="section-part">Trail Sign-Up</span>
-    <img src="assets/images/telegraph1.png" alt="Telegraph icon" class="section-icon">
-  </h2>
-  <p class="contact-text">Ready to saddle up? Reach out to us!</p>
-  <form>
-    <label for="name">Client's Trail Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="trail-mail">Trail Mail:</label>
-    <input type="email" id="trail-mail" name="email" required>
-    <label for="message">Ranch Note:</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Wild West Auto Transport. All Rights Reserved.</p>
 </footer>
-<script src="assets/js/script.js"></script>
+
+
+
+
+
+<!--
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+  <ion-icon name="chevron-up"></ion-icon>
+</a>
+
+
+
+
+
+<!--
+  - custom js link
+-->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="./assets/js/script.js" defer></script>
+
+<!--
+  - ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
