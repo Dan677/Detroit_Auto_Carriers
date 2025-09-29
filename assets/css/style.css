@@ -1,3914 +1,647 @@
- /*-----------------------------------*\
-
-#style.css
-
-\*-----------------------------------*/
-
-
-
-/**
-
-* copyright 2022 codewithsadee
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#CUSTOM PROPERTY
-
-\*-----------------------------------*/
-
-
-
-:root {
-
-
-
-/**
-
-* colors
-
-*/
-
-
-
---green-blue-crayola: hsl(202, 75%, 47%);
-
---prussian-blue: hsl(202, 72%, 15%);
-
---eerie-black: hsl(210, 11%, 15%);
-
---dark-orange: hsl(32, 100%, 50%);
-
---alice-blue: hsl(203, 100%, 97%);
-
---light-gray: hsl(0, 0%, 80%);
-
---indigo-dye: hsl(202, 64%, 26%);
-
---cultured-1: hsl(0, 0%, 94%);
-
---cultured-2: hsl(0, 0%, 95%);
-
---cultured-3: hsl(0, 0%, 95%);
-
---plutinum: hsl(0, 0%, 91%);
-
---black_60: hsla(0, 0%, 0%, 0.6);
-
---white: hsl(0, 0%, 100%);
-
---black: hsl(0, 0%, 0%);
-
---onyx: hsl(0, 0%, 24%);
-
-
-
-/**
-
-* typography
-
-*/
-
-
-
---ff-oswald: 'Oswald', sans-serif;
-
---ff-rubik: 'Rubik', sans-serif;
-
-
-
---fs-1: 6rem;
-
---fs-2: 5rem;
-
---fs-3: 4rem;
-
---fs-4: 3rem;
-
---fs-5: 2.2rem;
-
---fs-6: 2rem;
-
---fs-7: 1.8rem;
-
---fs-8: 1.5rem;
-
---fs-9: 1.4rem;
-
---fs-10: 1.2rem;
-
-
-
---fw-500: 500;
-
---fw-600: 600;
-
---fw-700: 700;
-
---fw-800: 800;
-
-
-
-/**
-
-* spacing
-
-*/
-
-
-
---section-padding: 50px;
-
-
-
-/**
-
-* shadow
-
-*/
-
-
--
---shadow-2: 0px 40px 60px hsla(202, 75%, 47%, 0.7);
-
---shadow-3: 0px 0px 60px hsla(202, 75%, 47%, 0.5);
-
-
-
-/**
-
-* transition
-
-*/
-
-
-
---transition: 0.25s ease;
-
---cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
-
---cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
-
-
-
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4e4bc; /* Parchment-like background */
+    color: #3c2f2f;
 }
 
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#RESET
-
-\*-----------------------------------*/
-
-
-
-*,
-
-*::before,
-
-*::after {
-
-margin: 0;
-
-padding: 0;
-
-box-sizing: border-box;
-
+h1, h2, h3, h4 {
+    font-family: 'Cinzel', serif;
+    color: #4a3728;
 }
-
-
-
-li { list-style: none; }
-
-
 
 a {
-
-text-decoration: none;
-
-color: inherit;
-
+    text-decoration: none;
+    color: #a0522d;
 }
 
-
-
-a,
-
-img,
-
-time,
-
-span,
-
-input,
-
-button,
-
-ion-icon { display: block; }
-
-
-
-img { height: auto; }
-
-
-
-input,
-
-button {
-
-background: none;
-
-border: none;
-
-font: inherit;
-
+/* Header */
+header {
+    background-color: #8b4513; /* Saddle Brown */
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
 }
 
-
-
-input { width: 100%; }
-
-
-
-button { cursor: pointer; }
-
-
-
-ion-icon { pointer-events: none; }
-
-
-
-html {
-
-font-family: var(--ff-rubik);
-
-font-size: 10px;
-
-scroll-behavior: smooth;
-
-}
-
-
-
-body {
-
-background-color: var(--white);
-
-color: var(--onyx);
-
-font-size: 1.6rem;
-
-line-height: 1.7;
-
-}
-
-
-
-:focus-visible { outline-offset: 4px; }
-
-
-
-::-webkit-scrollbar { width: 12px; }
-
-
-
-::-webkit-scrollbar-track { background-color: var(--cultured-2); }
-
-
-
-::-webkit-scrollbar-thumb {
-
-background-color: hsl(0, 0%, 80%);
-
-border: 2px solid var(--cultured-2);
-
-}
-
-
-
-::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
-
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#REUSED STYLE
-
-\*-----------------------------------*/
-
-
-
-.container { padding-inline: 15px; }
-
-
-
-.section { padding-block: var(--section-padding); }
-
-
-
-.h1,
-
-.h2,
-
-.h3 {
-
-font-family: var(--ff-oswald);
-
-line-height: 1.2;
-
-font-weight: var(--fw-600);
-
-}
-
-
-
-.h1 {
-
-font-size: var(--fs-3);
-
-text-transform: uppercase;
-
-}
-
-
-
-.h2,
-
-.h3 { color: var(--prussian-blue); }
-
-
-
-.h2 { font-size: var(--fs-4); }
-
-
-
-.h3 { font-size: var(--fs-5); }
-
-
-
-.img-holder {
-
-background-color: var(--light-gray);
-
-aspect-ratio: var(--width) / var(--height);
-
-}
-
-
-
-.img-cover {
-
-width: 100%;
-
-height: 100%;
-
-object-fit: cover;
-
-}
-
-
-
-.section-subtitle {
-
-color: var(--dark-orange);
-
-text-transform: uppercase;
-
-font-size: var(--fs-6);
-
-font-family: var(--ff-oswald);
-
-font-weight: var(--fw-600);
-
-letter-spacing: 3px;
-
-margin-block-end: 10px;
-
-}
-
-
-
-.section-text { line-height: 1.4; }
-
-
-
-.btn {
-
-position: relative;
-
-color: var(--white);
-
-background-color: var(--dark-orange);
-
-max-width: max-content;
-
-font-size: var(--fs-9);
-
-letter-spacing: 1px;
-
-padding-block: 10px;
-
-padding-inline: 15px 50px;
-
-}
-
-
-
-.btn::before,
-
-.btn::after {
-
-content: "";
-
-position: absolute;
-
-transition: var(--transition);
-
-}
-
-
-
-.btn::before {
-
-top: 50%;
-
-right: 15px;
-
-width: 25px;
-
-height: 1px;
-
-background-color: var(--white);
-
-}
-
-
-
-.btn::after {
-
-top: -6px;
-
-right: -6px;
-
-bottom: -6px;
-
-width: 20px;
-
-border: 2px solid var(--dark-orange);
-
-z-index: -1;
-
-}
-
-
-
-.btn:is(:hover, :focus)::before { width: 33px; }
-
-
-
-.btn:is(:hover, :focus)::after { width: 40px; }
-
-
-
-.grid-list {
-
-display: grid;
-
-gap: 30px;
-
-}
-
-
-
-.btn-link {
-  color: var(--dark-orange);
-  font-size: var(--fs-7);
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-@media (max-width: 991px) {
-  .btn-link .span {
-    white-space: nowrap;
-  }
-}
-
-.btn-link > * {
-
-transform: translateX(-22px);
-
-transition: var(--transition);
-
-}
-
-
-
-.btn-link:is(:hover, :focus) > * { transform: translateX(0); }
-
-
-
-.w-100 { width: 100%; }
-
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#HEADER
-
-\*-----------------------------------*/
-
-
-
-.header-contact,
-.theme-switch-wrapper {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s;
-}
-
-.header-contact {
-  display: block; /* Setează display la "block" pentru mobil */
-}
-
-.header-contact .contact-icon ion-icon {
-  color: white; /* inițial alb */
-  transition: color 0.3s ease;
-  font-size: 24px; /* dimensiune icon mai mică */
-}
-
-.header-contact .contact-icon:hover ion-icon {
-  color: orange; /* portocaliu la hover */
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-block: 15px;
-  z-index: 4;
-  transition: var(--transition);
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: all 2.1s ease; /* durată mai lentă */
-}
-
-.header.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.header.active { background-color: var(--green-blue-crayola); }
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-}
-
-.logo {
-  font-family: var(--ff-oswald);
-  color: var(--white);
-  font-size: 3rem;
-}
-.error-message {
-    color: red;
-    font-size: 0.85rem;
-    margin-top: 5px;
-    display: block;
-    }
-.nav-open-btn {
-  color: var(--white);
-  font-size: 35px;
-}
-.nav-open-btn ion-icon {
-  --ionicon-stroke-width: 40px;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: -300px;
-  max-width: 300px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--white);
-  box-shadow: var(--shadow-1);
-  z-index: 3;
-  visibility: hidden;
-  transition: 0.25s var(--cubic-in);
-}
-
-.navbar.active {
-  visibility: visible;
-  transform: translateX(300px);
-  transition: 0.5s var(--cubic-out);
-}
-
-.navbar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-block-end: 1px solid var(--plutinum);
-  padding: 30px 20px;
-}
-
-.navbar-top .logo {
-  color: var(--onyx);
-  font-size: 3rem;
-}
-
-@media (max-width: 991px) {
-  .nav-close-btn {
-      display: block;
-      z-index: 1000; /* Asigură-te că este deasupra overlay-ului */
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 2.5rem;
-      color: var(--black);
-      background-color: transparent;
-      padding: 20px;
-    }
-     .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.2s ease-in-out;
-        z-index: 999; /* Trebuie să fie mai mic decât z-index-ul butonului de închidere */
-      }
-      .overlay.active {
-        opacity: 1;
-        pointer-events: auto;
-      }
-  .nav-open-btn {
-    display: block;
-    z-index: 100;
-    margin-right: 18px;
-  }
-}
-.navbar-item:not(:last-child) { border-block-end: 1px solid var(--plutinum); }
-
-.navbar-link {
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 15px;
-    transition: var(--transition);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white; /* Acum e singura regula pentru culoare */
-    border-radius: 5px;
+    position: relative;
 }
 
-.navbar-link:is(:hover, :focus) {
-  background-color: var(--cultured-1);
-  color: var(--dark-orange);
+.header-logo {
+    width: 150px; /* Adjustable size */
+    height: auto;
+    margin-bottom: 1rem;
+    border: 3px solid #ffd700; /* Gold border for Western flair */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #f4e4bc; /* Parchment background */
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: var(--black_60);
-  z-index: 2;
-  visibility: hidden;
-  opacity: 0;
-  transition: var(--transition);
+h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
 }
 
-.overlay.active {
-  visibility: visible;
-  opacity: 1;
+header p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
 }
 
-.slider .icon ion-icon {
-  color: #fff; /* alb */
-  font-size: 20px; /* poți ajusta la 28px dacă vrei mai mare */
+.burger-btn {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1000;
 }
 
-.icon {
-  font-size: 24px;
-  transition: color 0.3s;
+.burger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffd700; /* Gold for Western feel */
+    margin: 5px 0;
+    transition: all 0.3s ease;
 }
 
-.icon.sun { color: #ffffff; } /* alb normal */
-.icon.moon { color: #cccccc; } /* alt alb */
-
-.icon:hover {
-  --ionicon-color: orange;
-}
-
-.slider .sun {
-  left: 8px;
-  opacity: 1; /* soarele evidențiat inițial (light mode) */
-}
-
-.slider .moon {
-  right: 8px;
-  opacity: 0.5; /* luna estompată inițial */
-}
-
-/* Dark mode activ (toggle checked) */
-input:checked + .slider .sun {
-  opacity: 0.5; /* soarele estompat */
-}
-
-input:checked + .slider .moon {
-  opacity: 1; /* luna evidențiată */
-}
-/*-----------------------------------*\
-
-#HERO
-
-\*-----------------------------------*/
-
-
-
-.hero {
-  position: relative;
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: grid;
-  place-content: center;
-  padding-block-start: calc(var(--section-padding) + 85px);
-  z-index: 1;
-}
-
-.hero-content {
-  background-color: var(--black_60);
-  color: var(--white);
-  text-align: center;
-  padding: 30px;
-
-  /* start invizibil + offset pentru animație */
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 1.2s ease; /* animație mai lentă */
-}
-
-.hero-content.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* animare individuală pe titlu, paragraf și buton */
-.logo-container {
-  display: inline-block;
-  overflow: hidden; /* textul nu depășește containerul */
-}
-
-.logo {
-  display: inline-block;
-  white-space: nowrap;
-  transform: translateX(-2%); /* start aproape de poziția finală */
-  animation: moveLine 4s linear forwards;
-}
-
-@keyframes moveLine {
-  0% {
-    transform: translateX(-2%);
-  }
-  100% {
-    transform: translateX(0); /* se oprește la poziția normală */
-  }
-}
-
-.btn-outline {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 1.2s ease 0.6s; /* delay pentru buton */
-}
-
-/* când hero-content are clasa show, toate intră cu delay */
-.hero-content.show .hero-title,
-.hero-content.show .hero-text,
-.hero-content.show .btn-outline {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-.hero-content.show .hero-title,
-.hero-content.show .hero-text,
-.hero-content.show .btn-outline {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.hero-title .span {
-
-color: var(--dark-orange);
-
-font-size: var(--fs-2);
-
-font-weight: var(--fw-700);
-
-}
-
-
-
-.hero-text { margin-block: 20px 15px; }
-
-
-
-.btn-outline {
-
-max-width: max-content;
-
-margin-inline: auto;
-
-font-size: var(--fs-9);
-
-font-weight: var(--fw-500);
-
-text-transform: uppercase;
-
-border: 1px solid var(--white);
-
-padding: 8px 20px;
-
-transition: var(--transition);
-
-}
-
-
-
-.btn-outline:is(:hover, :focus) {
-
-background-color: var(--dark-orange);
-
-border-color: var(--dark-orange);
-
-}
-
-
-
-.hero-shape {
-
-position: absolute;
-
-z-index: -1;
-
-animation: move 2s ease-in-out infinite alternate;
-
-}
-
-
-
-.hero .shape-1 {
-
-top: 100px;
-
-left: 30px;
-
-}
-
-
-
-.hero .shape-2 {
-
-bottom: 80px;
-
-right: 30px;
-
-}
-
-
-
-@keyframes move {
-
-0% { transform: translateY(0); }
-
-100% { transform: translateY(20px); }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#ABOUT
-
-\*-----------------------------------*/
-
-
-
-.about-banner {
-
-position: relative;
-
-box-shadow: var(--shadow-2);
-
-max-width: 300px;
-
-margin-block-end: 60px;
-
-}
-
-
-
-.about .abs-img-2 { display: none; }
-
-
-
-.about .abs-img-1 {
-
-position: absolute;
-
-bottom: 40px;
-
-right: 0;
-
-animation: move 2s ease-in-out infinite alternate;
-
-}
-/* animare doar pentru about */
-.about-content {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 1.2s ease;
-}
-
-.about-content.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* escalonare doar pentru about */
-.about-content .section-subtitle,
-.about-content .section-title,
-.about-content .section-text,
-.about-content .about-item {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 1.2s ease;
-}
-
-.about-content.show .section-subtitle {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.2s;
-}
-
-.about-content.show .section-title {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.4s;
-}
-
-.about-content.show .section-text {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.6s;
-}
-
-.about-content.show .about-item {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.8s;
-}
-
-
-.about :is(.section-title, .section-text) { margin-block-end: 20px; }
-
-
-
-.about-list { margin-block-end: 40px; }
-
-
-
-.about-item {
-
-display: flex;
-
-align-items: flex-start;
-
-gap: 15px;
-
-}
-
-
-
-.about-text { font-size: var(--fs-8); }
-
-
-
-.about-icon {
-
-min-width: max-content;
-
-color: var(--dark-orange);
-
-margin-block-start: 8px;
-
-}
-
-
-
-.about-item:not(:last-child) { margin-block-end: 10px; }
-
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#SERVICE
-
-\*-----------------------------------*/
-
-
-
-.service { background-color: var(--alice-blue); }
-
-
-
-.service :is(.section-subtitle, .section-title, .section-text) { text-align: center; }
-
-
-
-.service .section-title { margin-block-end: 20px; }
-
-
-
-.service .section-text { margin-block-end: 50px; }
-
-
-
-.service-card {
-
-background-color: var(--white);
-
-padding: 30px;
-
-border: 20px solid var(--cultured-3);
-
-transition: var(--transition);
-
-}
-.service .container > * {
-  opacity: 0;
-  transform: translateX(-50px); /* start din stânga */
-  transition: all 1.2s ease;
-}
-
-/* când intră în vizor */
-.service.show .container > * {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* escalonare pentru subtitlu, titlu, text și carduri */
-.service .section-subtitle {
-  transition-delay: 0.2s;
-}
-
-.service .section-title {
-  transition-delay: 0.4s;
-}
-
-.service .section-text {
-  transition-delay: 0.6s;
-}
-
-.service .service-card {
-  transition-delay: 0.8s;
-}
-
-.posts-card {
-
-background-color: var(--white);
-
-padding: 30px;
-
-border: 20px solid var(--cultured-3);
-
-transition: var(--transition);
-
-}
-.service-card .card-icon {
-  width: 160px; /* Am mărit lățimea */
-  height: 160px; /* Am mărit înălțimea */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.service-card .card-icon img {
-  width: 100%; /* Imaginea va umple acum 120px */
-  height: auto;
-  object-fit: contain;
-  /* Eliminați linia 'transform: scale(1.6);' */
-}
-
-.posts-card {
-  background-color: var(--white);
-  padding: 30px;
-  border: 20px solid var(--cultured-3); /* Bordura inițială */
-  transition: var(--transition);
-}
-.posts-card:is(:hover, :focus-within) {
-  border-color: var(--dark-orange); /* Setează bordura la portocaliu */
-  /* Poți elimina linia cu background-color: var(--orange-soda) !important; dacă vrei exact același comportament */
-}
-.posts-card.expanded {
-
-height: auto;
-
-overflow: visible;
-
-}
-.service-card:is(:hover, :focus-within)
- { border-color: var(--dark-orange);
-  }
-  .service-card .card-icon
-   { margin-block-end: 30px;
-    }
-.service-card .card-title .span
- { display: inline-block;
- color: var(--dark-orange);
-  font-size: var(--fs-3);
-  margin-inline-end: 15px;
-   }
-
-.dark-mode .posts-card .card-text {
-
-color: var(--light-gray); /* Asigură-te că textul rămâne vizibil */
-
-}
-.glow-text {
-  color: black; /* sau culoarea inițială a footer-ului */
-  transition: color 0.3s ease;
-}
-
-.glow-text:hover {
-  color: orange;
-  text-shadow:
-    0 0 5px orange,
-    0 0 10px orange,
-    0 0 20px orange,
-    0 0 40px orange;
-  animation: glow 1.5s infinite alternate;
-}
-.wavy-logo span {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.wavy-logo:hover span {
-  animation: wave 1s infinite;
-}
-.wavy-text {
-  display: inline-block;
-  white-space: normal; /* permite wrap */
-}
-
-.wavy-text span {
-  display: inline-block;
-  animation: wave 1.5s ease-in-out infinite;
-}
-.wavy-logo:hover span:nth-child(1) { animation-delay: 0s; }
-.wavy-logo:hover span:nth-child(2) { animation-delay: 0.05s; }
-.wavy-logo:hover span:nth-child(3) { animation-delay: 0.1s; }
-/* și tot așa pentru fiecare literă, crește delay-ul puțin câte puțin */
-
-@keyframes wave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-@keyframes glow {
-  0% { text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange, 0 0 40px orange; }
-  50% { text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 60px orange; }
-  100% { text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange, 0 0 40px orange; }
-}
-.footer-list-title span,
-.footer-link span {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-/* Animație val la hover */
-.footer-list-title:hover span,
-.footer-link:hover span {
-  animation: wave 1s infinite;
-}
-
-.footer-list-title:hover span:nth-child(1) { animation-delay: 0s; }
-.footer-list-title:hover span:nth-child(2) { animation-delay: 0.05s; }
-/* adaugă delay-uri incremental pentru fiecare literă */
-
-.footer-link:hover span:nth-child(1) { animation-delay: 0s; }
-.footer-link:hover span:nth-child(2) { animation-delay: 0.05s; }
-/* idem pentru toate literele */
-
-@keyframes wave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.dark-mode .posts-card .card-title {
-
-color: var(--white);
-
-}
-
-.posts-card:hover {
-
-background-color: var(--orange-soda) !important;
-
-}
-
-
-
-.dark-mode .posts-card:hover {
-background-color: var(--rich-black-fogra-29);
-border-color: var(--dark-orange) !important;
-
-}
-
-.dark-mode .posts-card .card-title .span {
-
-color: var(--spanish-gray); /* Asigură-te că numărul este vizibil */
-
-}
-
-.service-card .card-text { margin-block: 10px 20px; }
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#FEATURE
-
-\*-----------------------------------*/
-
-
-
-.feature .title-wrapper { margin-block-end: 30px; }
-
-
-
-.feature .section-text { margin-block: 20px 40px; }
-
-
-
-.feature-card {
-
-position: relative;
-
-padding: 30px;
-
-text-align: center;
-
-border: 1px solid var(--alice-blue);
-
-transition: var(--transition);
-
-}
-
-
-
-.feature-card:is(:hover, :focus-within) { box-shadow: var(--shadow-3); }
-
-
-
-.feature-card::before {
-
-content: var(--card-number);
-
-color: var(--cultured-1);
-
-font-family: var(--ff-oswald);
-
-font-size: var(--fs-1);
-
-font-weight: var(--fw-700);
-
-line-height: 1;
-
-transition: var(--transition);
-
-}
-
-
-
-.feature-card:is(:hover, :focus-within)::before { color: var(--dark-orange); }
-
-
-
-.feature-card .card-icon {
-
-background-color: var(--alice-blue);
-
-width: 170px;
-
-height: 170px;
-
-display: grid;
-
-place-content: center;
-
-border-radius: 50%;
-
-margin-inline: auto;
-
-margin-block-end: 30px;
-
-}
-
-
-
-.feature-card .card-text { margin-block: 20px 40px; }
-
-
-
-.feature-card .card-btn {
-
-color: var(--prussian-blue);
-
-font-size: 24px;
-
-border: 2px solid var(--prussian-blue);
-
-max-width: max-content;
-
-margin-inline: auto;
-
-padding: 10px 18px;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#PROJECT
-
-\*-----------------------------------*/
-.project .container > * {
-  opacity: 0;
-  transform: translateX(-50px); /* start din stânga */
-  transition: all 1.2s ease;
-}
-
-/* când intră în vizor */
-.project.show .container > * {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* escalonare pentru subtitlu, titlu, text */
-.project .section-subtitle {
-  transition-delay: 0.2s;
-}
-
-.project .section-title {
-  transition-delay: 0.4s;
-}
-
-.project .section-text {
-  transition-delay: 0.6s;
-}
-
-/* fiecare project-item intră cu delay incremental */
-.project .project-item {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 1.2s ease;
-}
-
-.project.show .project-item:nth-child(1) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.8s;
-}
-
-.project.show .project-item:nth-child(2) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1s;
-}
-
-.project.show .project-item:nth-child(3) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.2s;
-}
-
-.project.show .project-item:nth-child(4) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.4s;
-}
-
-.project.show .project-item:nth-child(5) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.6s;
-}
-
-.project.show .project-item:nth-child(6) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.8s;
-}
-
-
-.project { background-color: var(--alice-blue); }
-
-
-
-.project :is(.section-subtitle, .section-title, .section-text) { text-align: center; }
-
-
-
-.project .section-text { margin-block: 20px 50px; }
-
-
-
-.project-card { position: relative; }
-
-
-
-.project-card .action-btn {
-
-background-color: var(--dark-orange);
-
-color: var(--white);
-
-font-size: 28px;
-
-padding: 16px;
-
-position: absolute;
-
-top: 30px;
-
-left: 30px;
-
-opacity: 0;
-
-transition: var(--transition);
-
-}
-
-
-
-.project-card:is(:hover, :focus-within) .action-btn { opacity: 1; }
-
-
-
-.project-card .card-tag {
-
-color: var(--dark-orange);
-
-font-size: var(--fs-9);
-
-}
-
-
-
-.project-card .card-content {
-
-position: relative;
-
-background-color: var(--white);
-
-padding: 20px 30px;
-
-margin-block-start: -50px;
-
-margin-inline-start: 30px;
-
-}
-
-
-
-.project-card .h3 { font-size: var(--fs-7); }
-
-
-
-.project-card .card-title { transition: var(--transition); }
-
-
-
-.project-card :is(.card-title, .card-link):is(:hover, :focus) { color: var(--dark-orange); }
-
-
-
-.project-card .card-link {
-
-color: var(--prussian-blue);
-
-font-size: var(--fs-10);
-
-font-weight: var(--fw-600);
-
-text-transform: uppercase;
-
-margin-block-start: 5px;
-
-transition: var(--transition);
-
-}
-
-
-
-.project-list {
-
-display: flex;
-
-overflow-x: auto;
-
-gap: 20px;
-
-/* Am adăugat spațiu, dar o valoare mai mică decât inițial */
-
-padding-block-end: 10px;
-
-scroll-snap-type: inline mandatory;
-
-}
-
-
-
-.project-item {
-
-min-width: 100%;
-
-scroll-snap-align: start;
-
-}
-
-
-
-.project-list::-webkit-scrollbar { height: 15px; }
-
-
-
-.project-list::-webkit-scrollbar-track { outline: 2px solid var(--prussian-blue); }
-
-
-
-.project-list::-webkit-scrollbar-thumb {
-
-border: 3px solid var(--cultured-1);
-
-background-color: var(--prussian-blue);
-
-}
-
-
-
-.project-list::-webkit-scrollbar-button { width: calc(25% - 40px); }
-
-
-
-
-
-/*-----------------------------------*\
-
-#BLOG
-
-\*-----------------------------------*/
-.blog .container > * {
-  opacity: 0;
-  transform: translateX(50px); /* start din dreapta */
-  transition: all 1.2s ease;
-}
-
-/* când intră în vizor */
-.blog.show .container > * {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* escalonare pentru subtitlu, titlu, text */
-.blog .section-subtitle {
-  transition-delay: 0.2s;
-}
-
-.blog .section-title {
-  transition-delay: 0.4s;
-}
-
-.blog .section-text {
-  transition-delay: 0.6s;
-}
-
-/* fiecare blog-card intră cu delay incremental */
-.blog .blog-card {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 1.2s ease;
-}
-
-.blog.show .blog-card:nth-child(1) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.8s;
-}
-
-.blog.show .blog-card:nth-child(2) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1s;
-}
-
-.blog.show .blog-card:nth-child(3) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.2s;
-}
-
-.blog.show .blog-card:nth-child(4) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.4s;
-}
-
-
-.blog :is(.section-subtitle, .section-title, .section-text) { text-align: center; }
-
-
-
-.blog .section-text { margin-block: 20px 50px; }
-
-
-
-.blog-card .card-content { position: relative; }
-
-
-
-.blog-card .card-meta {
-
-background-color: var(--prussian-blue);
-
-color: var(--white);
-
-text-align: center;
-
-font-size: var(--fs-5);
-
-font-family: var(--ff-oswald);
-
-font-weight: var(--fw-600);
-
-line-height: 1.5;
-
-max-width: max-content;
-
-margin-inline: auto 20px;
-
-margin-block: -80px 20px;
-
-padding: 20px 25px;
-
-box-shadow: -8px 8px 0 var(--dark-orange);
-
-}
-
-
-
-.blog-card .card-meta .span {
-
-color: var(--dark-orange);
-
-font-size: var(--fs-3);
-
-font-weight: var(--fw-700);
-
-line-height: 0.75;
-
-}
-
-
-
-.blog-card .card-text { margin-block: 15px; }
-
-
-
-.card-banner {
-
-width: 100%;
-
-max-width: 100%;
-
-overflow: hidden;
-
-}
-
-
-
-.card-banner img {
-
-width: 100%;
-
-height: auto;
-
-display: block;
-
-object-fit: cover; /* păstrează proporțiile și taie partea care depășește */
-
+.burger-btn.active .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-.newsletter-content {
-
-display: flex;
-
-flex-direction: column; /* titlu deasupra butonului */
-
-align-items: flex-start; /* aliniază tot la stânga containerului */
-
-padding-left: 80px; /* mută tot conținutul spre dreapta */
-
-}
-.newsletter .newsletter-content,
-.newsletter .newsletter-banner {
-  opacity: 0;
-  transform: translateX(50px); /* start din dreapta */
-  transition: all 1.2s ease;
-}
-.newsletter-banner img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-
-  /* Efect wavy */
-  animation: wavy-img 3s ease-in-out infinite;
-}
-
-@keyframes wavy-img {
-  0% {
-    transform: translateY(0px);
-  }
-  25% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  75% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* când intră în vizor */
-.newsletter.show .newsletter-content,
-.newsletter.show .newsletter-banner {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* optional: delay pentru titlu și buton */
-.newsletter.show .section-title {
-  transition-delay: 0.2s;
-}
-
-.newsletter.show .newsletter-btn {
-  transition-delay: 0.4s;
-}
-
-
-.newsletter-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  /* Efect wavy */
-  animation: wavy-btn 2.5s ease-in-out infinite;
-}
-
-
-
-color: #fff; /* textul butonului */
-
-border-radius: 6px;
-
-border: 1px solid #ff7f00; /* border portocaliu */
-
-}
-
-
-
-
-
-/*-----------------------------------*\
-
-#NEWSLETTER
-
-\*-----------------------------------*/
-
-
-
-.newsletter { background-color: var(--dark-orange); }
-
-
-
-.newsletter .img-holder {
-
-background-color: transparent;
-
-margin-block-end: 20px;
-
-max-width: max-content;
-
-}
-
-
-
-.newsletter .section-title { margin-block-end: 20px; }
-
-
-
-.email-field {
-
-background-color: var(--white);
-
-color: var(--eerie-black);
-
-font-size: var(--fs-9);
-
-height: 65px;
-
-padding-inline: 20px;
-
-margin-block-end: 10px;
-
-outline: none;
-
-transition: var(--transition);
-
-}
-
-
-
-.email-field:focus { box-shadow: 0 2px 2px hsla(0, 0%, 0%, 0.4); }
-
-
-
-.newsletter-btn {
-
-background-color: var(--prussian-blue);
-
-color: var(--white);
-
-font-family: var(--ff-oswald);
-
-font-weight: var(--fw-700);
-
-padding: 8px 20px;
-
-}
-section.newsletter {
- background-color: var(--dark-orange);
-  background-image: url('./assets/images/your-orange-background.jpg'); /* dacă vrei poza */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  padding: 60px 20px;
-}
-
-/* Container pentru imagine + conținut */
-.newsletter-banner-container {
-  display: flex;
-  align-items: center; /* centru vertical */
-  gap: 40px; /* spațiu între imagine și conținut */
-  flex-wrap: wrap; /* responsive */
-  justify-content: center;
-  position: relative;
-}
-
-/* Imagine wavy */
-.newsletter-banner img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  animation: wavy-img 3s ease-in-out infinite;
-}
-
-@keyframes wavy-img {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-5px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(5px); }
-}
-
-/* Text wavy (pe litere individuale) */
-.wavy-text span {
-  display: inline-block;
-  animation: wavy-text 1.5s ease-in-out infinite;
-}
-
-@keyframes wavy-text {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-4px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(4px); }
-}
-
-/* Buton wavy */
-.newsletter-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  position: relative; /* important ca mișcarea să nu afecteze layout */
-  animation: wavy-btn 2.5s ease-in-out infinite;
-  transition: background-color 0.3s ease;
-}
-
-.newsletter-btn:hover {
-  background-color: #0056b3;
-}
-
-@keyframes wavy-btn {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-3px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(3px); }
-}
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#FOOTER
-
-\*-----------------------------------*/
-
-
-
-.footer {
-  opacity: 0;
-  transform: translateY(50px); /* start din jos */
-  transition: all 2.1s ease;
-}
-
-/* când intră în vizor */
-.footer.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-.footer-top {
-
-display: grid;
-
-gap: 40px;
-
+.burger-btn.active .burger-line:nth-child(2) {
+    opacity: 0;
 }
-
-
-
-.footer .logo {
-
-color: var(--prussian-blue);
-
-font-weight: var(--fw-800);
 
-font-size: 3.2rem;
-
+.burger-btn.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
-
-
-
-.footer-text { margin-block: 10px 30px; }
-
-
-
-.social-list {
-
-display: flex;
-
-gap: 10px;
 
+nav {
+    margin-top: 1rem;
 }
 
-.social-lists {
+.nav-menu {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px; /* Adaugă spațiu sub listă */
+    gap: 1.5rem;
 }
 
-.social-link {
-
-background-color: var(--indigo-dye);
-
-color: var(--white);
-
-font-size: 20px;
-
-padding: 12px;
-
-transition: var(--transition);
-
-}
-
-
-
-.social-link:is(:hover, :focus) { background-color: var(--prussian-blue); }
-
-
-
-.footer-list-title {
-
-font-size: var(--fs-6);
-
-max-width: max-content;
-
-padding-block-end: 10px;
-
-border-block-end: 3px solid var(--dark-orange);
-
-margin-block-end: 20px;
-
-}
-
-
-
-.footer-link { padding-block: 6px; }
-
-
-
-.footer-bottom {
-
-padding-block: 40px;
-
-border-block-start: 1px solid var(--prussian-blue);
-
-font-size: var(--fs-9);
-
-color: var(--indigo-dye);
-
-}
-
-
-
-.copyright-link { display: inline-block; }
-
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#BACK TO TOP
-
-\*-----------------------------------*/
-
-
-
-.back-top-btn {
-
-position: fixed;
-
-bottom: 10px;
-
-right: 20px;
-
-background-color: var(--eerie-black);
-
-color: var(--white);
-
-font-size: 20px;
-
-padding: 10px;
-
-z-index: 3;
-
-opacity: 0;
-
-visibility: hidden;
-
-transition: var(--transition);
-
-}
-
-
-
-.back-top-btn.active {
-
-opacity: 1;
-
-visibility: visible;
-
-transform: translateY(-10px);
-
-}
-
-.project-card {
-
-overflow: hidden; /* pentru ca poza mărită să nu depășească cardul */
-
-border-radius: 8px; /* opțional, rotunjirea colțurilor */
-
-}
-
-
-
-.project-card img {
-
-transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-}
-
-
-
-.project-card:hover img {
-
-transform: scale(1.05);
-
-box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* ridicare vizuală */
-
-}
-
-.footer-list .footer-link {
-
-display: inline-block; /* permite transform */
-
-transition: transform 0.2s ease, color 0.2s ease; /* animație smooth */
-
-color: #000; /* culoarea inițială: negru */
-
-text-decoration: none;
-
-}
-
-
-
-.footer-list .footer-link:hover {
-
-transform: scale(1.05); /* zoom mic */
-
-color: orange; /* culoare la hover */
-
-}
-
-
-
-
-
-
-
-/*-----------------------------------*\
-
-#MEDIA QUERISE
-
-\*-----------------------------------*/
-
-
-
-/**
-
-* responsive for larger than 540px screen
-
-*/
-
-
-
-@media (min-width: 540px) {
-
-
-
-/**
-
-* REUSED STYLE
-
-*/
-
-
-
-.btn {
-
-font-size: var(--fs-7);
-
-padding-inline: 30px 60px;
-
-}
-
-
-
-
-
-
-
-/**
-
-* HEADER
-
-*/
-
-
-
-.header-contact {
-
-color: var(--white);
-
-display: flex;
-
-align-items: center;
-
-gap: 20px;
-
-text-align: right;
-
-line-height: 1.2;
-
-margin-inline-start: auto;
-
-}
-
-
-
-.header .contact-label {
-
-text-transform: uppercase;
-
-font-size: var(--fs-9);
-
-}
-
-
-
-.header .contact-number {
-
-font-size: var(--fs-6);
-
-font-weight: var(--fw-600);
-
-letter-spacing: 1px;
-
-}
-
-
-
-.header .contact-icon {
-
-font-size: 35px;
-
-opacity: 0.6;
-
-}
-
-
-
-
-
-
-
-/**
-
-* ABOUT
-
-*/
-
-
-
-.about .abs-img-2 {
-
-display: block;
-
-position: absolute;
-
-width: 400px;
-
-bottom: 0;
-
-left: 50px;
-
-z-index: -1;
-
-}
-
-
-
-.about .abs-img-1 { right: -200px; }
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-/**
-
-* responsive for larger than 640px screen
-
-*/
-
-
-
-@media (min-width: 640px) {
-
-
-
-/**
-
-* REUSED STYLE
-
-*/
-
-
-
-.h1 { --fs-3: 5rem; }
-
-
-
-.container {
-
-max-width: 540px;
-
-width: 100%;
-
-margin-inline: auto;
-
-}
-
-
-
-
-
-
-
-/**
-
-* HEADER
-
-*/
-
-
-
-.header .container { max-width: unset; }
-
-
-
-.header .logo { font-size: 3.5rem; }
-
-
-
-
-
-
-
-/**
-
-* HERO
-
-*/
-
-
-
-.hero {
-    justify-content: flex-start;
-    padding-bottom: 200px;
-    align-items: flex-start;
-}
-
-
-
-.hero .shape-1 { left: 45px; }
-
-.text-background {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: inline-block; /* Fă din el un element de tip "inline-block" */
-}
-.hero-content {
-     background-color: transparent;
-     text-align: left;
-     position: relative;
-     top: -100px;
- }
-
-.btn-container {
-    width: 100%;
-    display: flex; /* Activează Flexbox pe container */
-    justify-content: center; /* Centrează elementele din interior pe orizontală */
-    margin-top: 20px;
-}
-.btn-outline {
-    /* Stiluri pentru a-i da un fundal vizibil, similar cu cel al textului */
-    background-color: rgba(0, 0, 0, 0.6); /* Fundal negru, 60% opacitate */
-    color: white; /* Culoarea textului din buton, pentru vizibilitate */
-    border: none; /* Elimină conturul dacă nu-l dorești */
-    border-radius: 5px; /* Colțuri rotunjite */
-    padding: 10px 20px; /* Adaugă spațiu în interiorul butonului */
-    text-decoration: none; /* Asigură că linkul nu are o linie dedesubt */
-}
-.hero-title .span { --fs-2: 6rem; }
-
-
-
-.hero-text { max-width: 30ch; }
-
-
-
-.btn-outline { margin-inline: 0; }
-
-}
-/**
-
-* responsive for larger than 768px screen
-
-*/
-@media (min-width: 768px) {
-
-
-
-/**
-
-* REUSED STYLE
-
-*/
-
-
-
-.container { max-width: 720px; }
-
-
-.h1 { --fs-3: 6rem; }
-
-.grid-list { grid-template-columns: 1fr 1fr; }
-
-/**
-
-* HERO
-
-*/
-
-
-
-.hero-title .span { --fs-2: 7rem; }
-
-
-
-.hero-text {
-
-font-size: var(--fs-7);
-
-max-width: 40ch;
-
-margin-block-end: 40px;
-
-}
-
-
-
-.btn-outline {
-
-font-size: var(--fs-7);
-
-padding: 12px 30px;
-
-}
-
-
-
-
-
-
-
-/**
-
-* FEATURES
-
-*/
-
-.feature-card::before { --fs-1: 10rem; }
-
-/**
-
-* PROJECT
-
-*/
-
-.project-list { gap: 80px; }
-
-
-
-.project-item { min-width: calc(50% - 40px); }
-
-/**
-
-* NEWSLETTER
-
-*/
-.newsletter { margin-block-start: 110px; }
-
-
-
-.newsletter .container { position: relative; }
-
-
-
-.newsletter .newsletter-banner {
-
-position: absolute;
-
-bottom: -50px;
-
-left: 0;
-
-margin-block-end: 0;
-
-}
-
-
-
-.newsletter-content {
-
-max-width: 355px;
-
-margin-inline-start: auto;
-
-}
-
-
-
-.newsletter .section-title { --fs-4: 4rem; }
-
-
-
-.newsletter-btn {
-
-font-size: var(--fs-5);
-
-padding: 10px 30px;
-
-}
-/**
-
-* FOOTER
-
-*/
-
-
-
-.footer-top { grid-template-columns: 1fr 1fr; }
-
-
-
-}
-
-/**
-
-* responsive for larger than 992px screen
-
-*/
-
-@media (min-width: 992px) {
-
-/**
-
-* CUSTOM PROPERTY
-
-*/
-:root {
-/**
-
-* typography
-
-*/
-
-
-
---fs-4: 4.5rem;
-
-
-
-/**
-
-* spacing
-
-*/
-
-
-
---section-padding: 120px;
-
-
-
-}
-
-
-
-
-
-
-
-/**
-
-* REUSED STYLE
-
-*/
-
-
-.container { max-width: 960px; }
-
-
-
-.h1 { --fs-3: 10rem; }
-
-
-
-.section-subtitle { --fs-6: 3rem; }
-
-
-
-.section-text {
-
-max-width: 70ch;
-
-margin-inline: auto;
-
-}
-
-
-
-.grid-list { grid-template-columns: repeat(3, 1fr); }
-
-
-
-
-
-
-
-/**
-
-* HEADER
-
-*/
-
-
-.nav-open-btn,
-
-.navbar-top,
-
-.navbar-link > ion-icon { display: none; }
-
-.navbar,
-
-.navbar.active { all: unset; }
-
-
-
-.navbar-list {
-
-display: flex;
-
-gap: 5px;
-
-}
-
-
-.navbar-item:not(:last-child) { border-block-end: none; }
-
-
-
-.navbar-link { color: var(--white); }
-
-
-
-.navbar-link:is(:hover, :focus) { background-color: transparent; }
-
-
-
-.header-contact { margin-inline-start: 0; }
-
-
-
-
-
-
-
-/**
-
-* HERO
-
-*/
-
-
-.hero { grid-template-columns: 1fr; }
-
-
-
-.hero-content { padding: 0; }
-
-
-
-.hero-title .span { --fs-2: 12rem; }
-
-
-
-
-
-
-
-/**
-
-* ABOUT
-
-*/
-
-
-
-.about .container {
-
-display: grid;
-
-grid-template-columns: 1fr 1fr;
-
-align-items: center;
-
-gap: 30px;
-
-}
-
-
-
-.about-banner { margin-block-end: 0; }
-
-
-
-.about .abs-img-1 { right: -100px; }
-
-
-
-.about :is(.section-title, .section-text) { margin-block-end: 35px; }
-
-
-
-
-
-
-
-/**
-
-* FEATURE
-
-*/
-
-
-
-.feature .title-wrapper {
-
-display: grid;
-
-grid-template-columns: 1fr 1fr;
-
-align-items: center;
-
-justify-items: self-end;
-
-}
-
-
-
-.feature .section-text { margin-block-end: 0; }
-
-
-
-.feature-list { margin-block-start: 120px; }
-
-
-
-.feature-card { padding-block-start: 80px; }
-
-
-
-.feature-card::before {
-
---fs-1: 16rem;
-
-position: absolute;
-
-top: -90px;
-
-left: 20px;
-
-}
-
-
-
-
-
-
-
-/**
-
-* PROJECT
-
-*/
-
-
-
-.project-item { min-width: calc(33.33% - 53.33px); }
-
-
-
-
-
-
-
-/**
-
-* .
-
-*/
-
-
-
-.blog-list { grid-template-columns: 1fr 1fr; }
-
-
-
-
-
-
-
-/**
-
-* NEWSLETTER
-
-*/
-
-
-
-.newsletter { padding-block: 30px; }
-
-
-
-.newsletter .newsletter-banner { bottom: -30px; }
-
-
-
-.newsletter-content {
-
-max-width: 600px;
-
-display: grid;
-
-grid-template-columns: 1fr 1fr;
-
-}
-
-
-
-
-
-
-
-/**
-
-* FOOTER
-
-*/
-
-
-
-.footer-top {
-
-grid-template-columns: repeat(4, 1fr);
-
-justify-items: self-end;
-
-}
-
-
-
-.copyright { text-align: center; }
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-/**
-
-* responsive for larger than 1200px screen
-
-*/
-
-
-
-@media (min-width: 1200px) {
-
-
-
-/**
-
-* REUSED STYLE
-
-*/
-
-
-
-.container { max-width: 1180px; }
-
-
-
-.h1 { --fs-3: 12rem; }
-
-
-
-
-
-
-
-/**
-
-* HEADER
-
-*/
-
-
-
-.header .contact-number { --fs-6: 3rem; }
-
-
-
-
-
-
-
-/**
-
-* HERO
-
-*/
-
-
-
-.hero {
-
-padding-block-start: 150px;
-
-background-position: left;
-
-}
-
-
-
-.hero-title .span { --fs-2: 14rem; }
-
-
-
-.hero-text { --fs-7: 2.4rem; }
-
-
-
-
-
-
-
-/**
-
-* ABOUT
-
-*/
-
-
-
-.about-banner { max-width: 370px; }
-
-
-
-.about .abs-img-2 { width: max-content; }
-
-
-
-
-
-
-
-/**
-
-* NEWSLETTER
-
-*/
-
-
-
-.newsletter-content {
-
-max-width: 840px;
-
-grid-template-columns: 0.8fr 1fr;
-
-}
-
-
-
-
-
-
-
-/**
-
-* FOOTER
-
-*/
-
-
-
-.footer-top { padding-block: 60px; }
-
-
-
-}
-
-.zone {
-
-/* poate ai padding și background */
-
-padding: 100px 0;
-
-background-color: #ffffff;
-
-}
-
-
-
-/* alias pentru lista și cardurile de zone ca să preia stilurile vechi de la feature */
-
-.zone-list {
-
-display: grid;
-
-gap: 30px;
-
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-list-style: none;
-
-margin: 0;
-
-padding: 0;
-
-align-items: stretch; /* face toate cardurile la aceeași înălțime */
-
-}
-
-
-
-.zone-card {
-
-background: #fff;
-
-padding: 100px;
-
-border-radius: 12px;
-
-box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
-display: flex;
-
-flex-direction: column;
-
-justify-content: space-between; /* sau center dacă vrei conținutul vertical centrat */
-
-height: 100%; /* forțează să umple spațiul din grid */
-animation: wavy 3s ease-in-out infinite;
-}
-@keyframes wavy {
-  0% {
-    transform: translateY(0px);
-  }
-  25% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  75% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-.zone .title-wrapper > div {
-
-text-align: center;
-
-}
-/* animare doar pentru zone-content */
-.zone .container > * {
-  opacity: 0;
-  transform: translateX(50px); /* start din dreapta */
-  transition: all 1.2s ease;
-}
-
-/* când intră în vizor */
-.zone.show .container > * {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* escalonare pentru titlu și carduri */
-.zone .section-subtitle {
-  transition-delay: 0.2s;
-}
-.section-subtitle {
-  text-align: center;
-}
-.zone .section-title {
-  transition-delay: 0.4s;
-}
-
-.zone .zone-card {
-  opacity: 0;
-  transform: translateX(50px); /* start din dreapta */
-  transition: all 1.2s ease;
-}
-
-/* când intră în vizor */
-.zone.show .zone-card {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.6s; /* sau se poate incrementa per card pentru efect escalonat */
-}
-
-
-/* Centrare conținut card */
-
-.zone-card {
-
-display: flex;
-
-flex-direction: column;
-
-align-items: center; /* centrează tot ce e în card pe orizontală */
-
-text-align: center; /* centrează textul */
-
-}
-
-.zone .title-wrapper {
-
-margin-bottom: 40px; /* ajustează valoarea după cum vrei spațiul */
-
-}
-
-.zone-card {
-
-background: #fff;
-
-padding: 30px;
-
-border-radius: 12px;
-
-box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
-position: relative;
-
-border: 3px solid transparent; /* contur inițial invizibil */
-
-transition: border-color 0.3s ease, transform 0.3s ease; /* efect la hover */
-
-}
-
-
-
-.zone-card:hover {
-
-border-color: orange; /* contur portocaliu la hover */
-
-transform: translateY(-5px); /* efect ușor de ridicare */
-
-}
-
-.theme-switch-wrapper {
-
-display: flex;
-
-align-items: center;
-
-margin-left: 20px; /* spațiu față de link-uri */
-
-}
-
-
-
-.theme-switch {
-
-position: relative;
-
-display: inline-block;
-
-width: 60px;
-
-height: 30px;
-
-}
-
-
-
-.theme-switch input {
-
-opacity: 0;
-
-width: 0;
-
-height: 0;
-
-}
-
-
-
-/* Fundal slider și tranziție între iconuri */
-
-/* Iconuri soare și lună */
-
-.slider .icon {
-
-position: absolute;
-
-top: 50%;
-
-transform: translateY(-50%);
-
-font-size: 16px;
-
-pointer-events: none;
-
-transition: opacity 0.4s, color 0.4s;
-
-color: var(--white);
-
-}
-
-.slider .icon ion-icon {
-
-color: #fff; /* alb */
-
-font-size: 20px; /* poți ajusta la 28px dacă vrei mai mare */
-
-}
-.icon {
-  font-size: 24px;
-  transition: color 0.3s;
-}
-
-.icon.sun { color: #ffffff; } /* alb normal */
-.icon.moon { color: #cccccc; } /* alt alb */
-
-.icon:hover {
- --ionicon-color: orange;
-}
-.slider .sun {
-
-left: 8px;
-
-opacity: 1; /* soarele evidențiat inițial (light mode) */
-
-}
-
-
-
-.slider .moon {
-
-right: 8px;
-
-opacity: 0.5; /* luna estompată inițial */
-
-}
-
-
-
-/* Dark mode activ (toggle checked) */
-
-input:checked + .slider .sun {
-
-opacity: 0.5; /* soarele estompat */
-
-}
-
-
-
-input:checked + .slider .moon {
-
-opacity: 1; /* luna evidențiată */
-
-}
-
-@keyframes moveLine {
-    0% {
-        left: -100%;
-    }
-    100% {
-        left: 100%;
-    }
-}
-
-/* Culori iconuri optional */
-
-body.dark-mode .slider .sun {
-
-color: #fff; /* soarele estompat în dark mode */
-
-}
-
-
-
-body.dark-mode .slider .moon {
-
-color: #ffc600; /* luna evidențiată cu galben */
-
-}
-
-/* dark mode pentru pagină */
-
-/* FUNDAL GENERAL */
-
-body.dark-mode {
-
-background-color: #0d1b2a; /* albastru închis general */
-
-color: var(--white);
-
-}
-
-
-
-/* HEADER */
-
-.header.dark-mode {
-
-background-color: var(--prussian-blue);
-
-}
-
-body.dark-mode .h2 {
-
-color: var(--light-gray);
-
-}
-
-/* FOOTER */
-
-.footer.dark-mode {
-
-background-color: #1f2a40; /* aproape negru, dar diferit de secțiuni */
-
-color: var(--white);
-
-}
-
-
-
-/* SECTIUNI */
-
-body.dark-mode .hero {
-
-background-color: #0d1b2a; /* albastru foarte închis */
-
-color: var(--white);
-
-}
-
-
-
-body.dark-mode .about {
-
-background-color: #131f34; /* albastru median */
-
-color: var(--white);
-
-}
-
-
-
-body.dark-mode .service {
-
-background-color: #1b263b; /* albastru închis diferit */
-
-color: var(--white);
-
-}
-
-
-
-body.dark-mode .project {
-
-background-color: #162447; /* alt albastru închis */
-
-color: var(--white);
-
-}
-
-
-
-body.dark-mode .zone {
-
-background-color: #1b2431; /* secțiuni locations */
-
-color: var(--white);
-
-}
-
-
-
-/* LINK-URI */
-
-body.dark-mode .section a,
-
-body.dark-mode .footer a {
-
-color: var(--dark-orange);
-
-}
-
-
-
-/* CARDURI */
-
-body.dark-mode .service-card,
-
-body.dark-mode .project-card,
-
-body.dark-mode .zone-card {
-
-background-color: #252c3c; /* mai închis decât secțiunea */
-
-color: var(--white);
-
-}
-
-
-
-body.dark-mode .service-card .card-title,
-
-body.dark-mode .service-card .card-text,
-
-body.dark-mode .project-card .card-title,
-
-body.dark-mode .project-card .card-text,
-
-body.dark-mode .zone-card .card-title,
-
-body.dark-mode .zone-card .card-text {
-
-color: var(--white);
-
-}
-
-
-
-/* TOOLTIP ZONE */
-
-body.dark-mode #zone-tooltip,
-
-body.dark-mode #zone-tooltip * {
-
-background-color: #252c3c !important;
-
-color: var(--white) !important;
-
-border-color: var(--dark-orange) !important;
-
-}
-.Posts .container > * {
-  opacity: 0;
-  transform: translateX(-50px); /* start din stânga */
-  transition: all 1.2s ease;
-}
-
-/* când intră în vizor */
-.Posts.show .container > * {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* escalonare pentru subtitlu, titlu și text */
-.Posts .section-subtitle {
-  transition-delay: 0.2s;
-}
-
-.Posts .section-title {
-  transition-delay: 0.4s;
-}
-
-.Posts .section-text {
-  transition-delay: 0.6s;
-}
-
-/* fiecare posts-card intră cu delay incremental */
-.Posts .posts-card {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 1.2s ease;
-}
-
-.Posts.show .posts-card:nth-child(1) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.8s;
-}
-
-.Posts.show .posts-card:nth-child(2) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1s;
-}
-
-.Posts.show .posts-card:nth-child(3) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.2s;
-}
-.Posts { background-color: var(--alice-blue); }
-
-
-
-.Posts :is(.section-subtitle, .section-title, .section-text) { text-align: center; }
-
-
-
-.Posts .section-text { margin-block: 20px 50px; }
-
-
-
-.blog-card .card-content { position: relative; }
-
-
-
-.blog-card .card-meta {
-
-background-color: var(--prussian-blue);
-
-color: var(--white);
-
-text-align: center;
-
-font-size: var(--fs-5);
-
-font-family: var(--ff-oswald);
-
-font-weight: var(--fw-600);
-
-line-height: 1.5;
-
-max-width: max-content;
-
-margin-inline: auto 20px;
-
-margin-block: -80px 20px;
-
-padding: 20px 25px;
-
-box-shadow: -8px 8px 0 var(--orange-soda);
-
-}
-
-
-
-.blog-card .card-meta .span {
-
-color: var(--dark-orange);
-
-font-size: var(--fs-3);
-
-font-weight: var(--fw-700);
-
-line-height: 0.75;
-
-}
-
-
-
-.blog-card .card-text { margin-block: 15px; }
-
-
-
-.card-banner {
-
-width: 100%;
-
-max-width: 100%;
-
-overflow: hidden;
-
-}
-
-
-
-.card-banner img {
-
-width: 100%;
-
-height: auto;
-
-display: block;
-
-object-fit: cover;
-
-}
-.logo-desktop {
-  display: none; /* Ascunde logo-ul de desktop pe mobil */
+.nav-menu li a {
+    color: white;
+    font-weight: bold;
 }
 
-.logo-mobile {
-  display: inline; /* Afișează logo-ul de mobil pe mobil */
+.nav-menu li a:hover {
+    color: #ffd700;
 }
 
-@media (min-width: 992px) {
-  .logo-mobile {
-    display: none; /* Ascunde logo-ul de mobil pe desktop */
-  }
-  .logo-desktop {
-    display: inline; /* Afișează logo-ul de desktop pe desktop */
-  }
+/* Sections */
+section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
-
-/* Stiluri pentru meniul de mobil (se aplică doar la ecrane de maxim 991px) */
-@media (max-width: 991px) {
-  .navbar.active {
-    background-color: var(--white) !important;
-  }
-  .navbar-list {
-    background-color: var(--white) !important;
-  }
-  .navbar-list a.navbar-link {
-    color: var(--black) !important;
-    background-color: transparent !important;
-  }
-  .navbar-list ion-icon {
-    color: var(--black) !important;
-  }
 
-  /* Adăugare pentru logo-ul de pe mobil în dark mode */
-  body.dark-mode .logo-mobile {
-    color: var(--black) !important;
-  }
-  .header .logo {
-    font-size: 1.8rem; /* Poți ajusta această valoare. */
-  }
+#home {
+    background-color: #deb887; /* Burly Wood */
+    text-align: center;
 }
-body.dark-mode .Posts {
 
-background-color: var(--prussian-blue);
-
-}
-body.dark-mode .posts-card .card-title,
-body.dark-mode .posts-card .card-title a {
-  background-color: transparent !important;
-  color: var(--black) !important;
+#services {
+    background-color: #d2b48c; /* Tan */
 }
-body.dark-mode .posts-card .card-title:hover {
-  background-color: transparent !important;
-  color: var(--black) !important;
-}
-/* Și titlurile vor fi gri deschis în dark mode, la fel ca la services */
-
-body.dark-mode .Posts .h2 {
 
-color: var(--light-gray);
-
+#team {
+    background-color: #f5deb3; /* Wheat */
 }
-
-.blog-card .blog-img-contain {
-
-width: 100%;
-
-height: 100%;
-
-object-fit: contain; /* Aceasta e modificarea esențială */
 
-}-shadow-1: 2px 0 50px hsla(0, 0%, 0%, 0.2);
-.section {
-  padding: 40px 0;
+#contact {
+    background-color: #cd853f; /* Peru */
 }
 
-.contact-section {
-  padding: 60px 0;
-  background-color: AliceBlue; /* Light mode default */
+/* Section Titles */
+h2 {
+    font-size: 4rem; /* Large, bold section titles */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-body.dark-mode .contact-section {
-  background-color: #18233C; /* Dark mode */
+.section-part {
+    display: inline-block;
 }
 
-.contact-section .container {
-  max-width: 800px;
-  margin: 0 auto;
+.section-part:first-child {
+    color: #8b0000; /* Dark Red for the first part (e.g., "Our", "Services") */
 }
 
-.contact-section .section-title {
-  text-align: center;
-  margin-bottom: 10px;
+.section-part:last-child {
+    color: #d2691e; /* Chocolate for the second part (e.g., "Crew", "Contact") */
 }
 
-.contact-section .section-text {
-  text-align: center;
-  margin-bottom: 40px;
-  color: var(--sonic-silver);
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
 }
 
-body.dark-mode .contact-section .section-text {
-  color: #cdd9f0; /* deschis, vizibil pe fundal închis */
+.service-item {
+    background-color: #fff8dc; /* Cornsilk */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form {
+/* Team Section - Wanted Poster */
+.team-grid {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  align-items: stretch; /* face toate cardurile egale */
 }
 
-.form-group {
+.team-card {
+    perspective: 1000px;
+}
+
+.wanted-poster {
+  background: url('https://www.transparenttextures.com/patterns/old-wall.png'), #f4e4bc;
+  border: 5px solid #4a3728;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: rotateY(0deg);
+  transition: transform 0.3s;
+  min-height: 500px; /* setează înălțimea minimă */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
-.form-group .form-label {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--eerie-black);
-  margin-bottom: 5px;
+.wanted-poster::before,
+.wanted-poster::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #4a3728;
+    border-radius: 50%;
+    top: -10px;
+    box-shadow: 0 0 0 5px #f4e4bc;
 }
 
-body.dark-mode .form-group .form-label {
-  color: var(--white);
+.wanted-poster::before {
+    left: -10px;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--light-gray);
+.wanted-poster::after {
+    right: -10px;
+}
+
+.wanted-poster:hover {
+    transform: rotateY(10deg);
+}
+
+.wanted-poster h3 {
+    font-size: 2rem;
+    color: #8b0000; /* Dark Red */
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #4a3728;
+}
+
+.driver-photo {
+    width: 100%;
+    height: 250px;       /* mai înalt decât 200px */
+    object-fit: cover;   /* umple spațiul, dar taie doar puțin */
+    border: 3px solid #4a3728;
+    margin: 1rem 0;
+}
+
+.wanted-poster h4 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.wanted-poster p {
+    margin: 0.3rem 0;
+}
+
+.reward {
+    font-weight: bold;
+    color: #d2691e;
+    text-transform: uppercase;
+    border-top: 2px solid #4a3728;
+    padding-top: 0.5rem;
+}
+
+/* Contact Form */
+.contact-text {
+    font-size: 2.5rem; /* Increased size for larger text */
+    font-weight: bold;
+    text-align: center; /* Centered text */
+    margin-bottom: 2rem;
+    color: #4a3728;
+    line-height: 1.2; /* Improved readability */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    margin: 0.5rem 0 0.2rem;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #4a3728;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    background-color: #8b4513;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+}
+
+button:hover {
+    background-color: #a0522d;
+}
+
+/* Footer */
+footer {
+    background-color: #4a3728;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .burger-btn {
+        display: block; /* Show burger button on mobile */
+    }
+
+    .nav-menu {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #8b4513;
+        padding: 1rem 0;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 3rem; /* Slightly smaller for mobile */
+    }
+
+    .contact-text {
+        font-size: 2rem; /* Adjusted for mobile but still larger */
+    }
+
+    .header-logo {
+        width: 120px; /* Smaller logo on mobile */
+    }
+}
+.section-icon {
+    width: 70px;     /* mărime ajustabilă */
+    height: auto;
+    vertical-align: middle;
+    margin: 0 10px;  /* spațiu între poză și text */
+}
+.section-part:first-of-type {
+    color: #8b0000; /* Dark Red */
+}
+
+.section-part:last-of-type {
+    color: #d2691e; /* Chocolate */
+}
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;   /* aliniază logo și text pe verticală */
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.header-logo {
+    width: 70px;   /* mai mic */
+    height: auto;
+    margin-right: 15px;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centrează h1 + p față de logo */
+}
+/* Reviews & Gallery Section */
+#reviews {
+  background-color: #deb887; /* Burly Wood */
+  text-align: center;
+}
+
+#gallery {
+  background-color: #f5deb3; /* Wheat */
+  text-align: center;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  animation: scrollCarousel 20s linear infinite;
+}
+
+.review-card, .gallery-card {
+  min-width: 300px;
+  max-width: 400px;
+  background: #fff8dc;
+  padding: 1rem;
+  border: 3px solid #4a3728;
   border-radius: 8px;
-  font-size: 1.6rem;
-  font-family: 'Rubik', sans-serif;
-  color: var(--eerie-black);
-  background-color: var(--white);
-  transition: border-color 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--orange-soda);
+.review-card p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
-body.dark-mode .form-group input,
-body.dark-mode .form-group textarea {
-  background-color: #2e2e4e;
-  color: var(--white);
-  border-color: #555577;
+.review-card h4 {
+  font-weight: bold;
+  color: #8b0000;
 }
 
-body.dark-mode .form-group input::placeholder,
-body.dark-mode .form-group textarea::placeholder {
-  color: #a0a0b0;
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #4a3728;
 }
 
-.form-group textarea {
-  resize: vertical;
+/* Carousel animation */
+@keyframes scrollCarousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
-.form-btn {
-  background-color: #2c2c2c; /* Light mode button */
-  color: #ffffff;
+.review-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #8b4513;
+  margin-bottom: 0.8rem;
+  object-fit: cover;
+}
+/* Frontier Trails */
+#frontier-trails {
+  background-color: #d2b48c; /* Tan */
+  text-align: center;
+}
+
+.trails-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.trail-card {
+  background: #fff8dc; /* Cornsilk */
+  border: 3px solid #4a3728;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.trail-card:hover {
+  transform: translateY(-5px);
+}
+
+.trail-card img {
+   width: 100%;
+   height: 200px;        /* dimensiune maximă a containerului */
+   object-fit: contain;  /* micșorează imaginea să încapă complet */
+   background-color: #fff8dc; /* fundal ca să nu rămână goluri */
+   border-radius: 6px;
+   border: 2px solid #4a3728;
+   margin-bottom: 0.8rem;
+ }
+.trail-card h3 {
+  color: #8b0000;
+  margin: 0.5rem 0;
+}
+
+.trail-card p {
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.trails-btn-wrapper {
+  margin-top: 2rem;
+}
+
+#showMoreTrails {
+  background-color: #8b4513;
+  color: white;
+  padding: 0.8rem 1.5rem;
   border: none;
-  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-.form-btn:hover {
-  background-color: #1e1e1e;
+#showMoreTrails:hover {
+  background-color: #a0522d;
 }
-body.dark-mode .form-btn {
-  background-color: #FFA733; /* sau #FFA500 direct */
-  color: var(--white);
+/* Calculator Section */
+#calculator {
+  background-color: #deb887; /* Burly Wood */
+  text-align: center;
 }
 
-body.dark-mode .form-btn:hover {
-  background-color: #FF6A00;
-  color: var(--orange-soda);
+.calculator-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  background: #fff8dc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 3px solid #4a3728;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.calculator-form label {
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+  color: #4a3728;
+}
+
+.calculator-form input,
+.calculator-form select {
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #4a3728;
+  border-radius: 6px;
+}
+
+.calculator-form button {
+  background-color: #8b4513;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.calculator-form button:hover {
+  background-color: #a0522d;
+}
+
+.fare-result {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #8b0000;
+}
+/* Blogs Section */
+#blogs {
+  background-color: #f5deb3; /* Wheat */
+  text-align: center;
+}
+
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.blog-card {
+  background: #fff8dc; /* Cornsilk */
+  border: 3px solid #4a3728;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #4a3728;
+  margin-bottom: 1rem;
+}
+
+.blog-card h3 {
+  color: #8b0000;
+  margin: 0.5rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.blog-card p {
+  flex: 1;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.blog-link {
+  color: #8b4513;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.blog-link:hover {
+  color: #a0522d;
+}
+
+.blogs-btn-wrapper {
+  margin-top: 2rem;
+}
+
+#loadMoreBlogs {
+  background-color: #8b4513;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#loadMoreBlogs:hover {
+  background-color: #a0522d;
 }
