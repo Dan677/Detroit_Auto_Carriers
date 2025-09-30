@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggler.addEventListener('click', () => {
         navbar.classList.toggle('active');
         overlay.classList.toggle('active');
+        document.body.classList.toggle('no-scroll'); // ✅ blocăm/deblocăm scroll-ul
       });
     });
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         navbar.classList.remove('active');
         overlay.classList.remove('active');
+        document.body.classList.remove('no-scroll'); // ✅ când se închide, scoatem blocarea
       });
     });
   }
@@ -230,22 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (error) {
         alert('A apărut o eroare de rețea.');
       }
-    });
-  }
-
-  /**
-   * CALCULATOR FORM
-   */
-  const calcForm = document.getElementById('calcForm');
-  if (calcForm) {
-    calcForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const cars = parseInt(document.getElementById('cars').value);
-      const distance = parseInt(document.getElementById('distance').value);
-      const type = document.getElementById('type').value;
-      let rate = type === 'open' ? 0.5 : 0.8; // $/mile
-      let total = cars * distance * rate;
-      document.getElementById('calcResult').textContent = 'Estimated Cost: $' + total.toFixed(2);
     });
   }
 

@@ -4873,3 +4873,6 @@ html {
     transform: rotateY(180deg);
   }
 }
+body.no-scroll {
+  overflow: hidden;
+}
