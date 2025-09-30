@@ -4588,3 +4588,96 @@ html, body {
 .section.advantages .section-title {
   text-align: center;          /* sigur text centrat */
 }
+/* container timeline + poza */
+.advantages-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+    margin-top: 40px;
+}
+
+/* timeline */
+.timeline {
+  position: relative;
+  flex: 1;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 40px;            /* mutăm linia un pic mai la dreapta */
+  top: 0;
+  bottom: 0;
+  width: 3px;            /* linia mai groasă */
+  background: var(--dark-orange);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60px;   /* mai mult spațiu între iteme */
+  padding-left: 100px;   /* mai mult loc pt cerc mărit */
+  text-align: left;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  width: 90px;           /* cerc mai mare */
+  height: 90px;
+  background: var(--prussian-blue);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--dark-orange); /* contur mai gros */
+}
+
+.timeline-icon img {
+  width: 55px;           /* icon mai mare înăuntru */
+  height: 55px;
+  object-fit: contain;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.8rem;     /* titlu mai mare */
+  color: var(--dark-orange);
+}
+
+.timeline-content p {
+  margin: 8px 0 0;
+  color: #333;
+  font-size: 1.1rem;     /* text un pic mai mare */
+  line-height: 1.6;
+}
+/* partea cu poza din dreapta */
+.advantages-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantages-image img {
+  max-width: 110%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* responsive */
+@media (max-width: 992px) {
+  .advantages-top {
+    flex-direction: column;
+  }
+  .advantages-image {
+    margin-top: 30px;
+  }
+}
+.advantages-top {
+  flex-direction: row-reverse; /* inversează ordinea stânga/dreapta */
+}
