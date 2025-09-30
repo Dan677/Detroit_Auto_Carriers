@@ -4185,3 +4185,10 @@ body.dark-mode .form-btn:hover {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* =======================
+   #NO HORIZONTAL SCROLL
+======================= */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* blochează scroll pe orizontală */
+}
