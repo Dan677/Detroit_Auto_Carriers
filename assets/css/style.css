@@ -3912,3 +3912,134 @@ body.dark-mode .form-btn:hover {
   background-color: #FF6A00;
   color: var(--orange-soda);
 }
+/* =======================
+   #REVIEWS
+======================= */
+.reviews {
+  background-color: var(--white);
+  text-align: center;
+}
+.reviews-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: inline mandatory;
+  padding: 30px 0;
+}
+.review-card {
+  flex: 0 0 60%;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border: 2px solid var(--dark-orange);
+  border-radius: 12px;
+  scroll-snap-align: start;
+  box-shadow: var(--shadow-2);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+.review-text {
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: var(--fs-7);
+}
+.review-author {
+  color: var(--dark-orange);
+  font-weight: bold;
+}
+
+/* =======================
+   #CALCULATOR
+======================= */
+.calculator {
+  background-color: var(--alice-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+.calc-form {
+  background: var(--white);
+  border: 2px solid var(--dark-orange);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.calc-form input,
+.calc-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+}
+.calc-result {
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--prussian-blue);
+  font-size: var(--fs-6);
+}
+
+/* =======================
+   #FAQ
+======================= */
+.faq {
+  background-color: var(--white);
+  text-align: center;
+}
+.faq-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: inline mandatory;
+  padding: 30px 0;
+}
+.faq-card {
+  flex: 0 0 60%;
+  max-width: 500px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  border: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 280px;
+  justify-content: center;
+  margin: 0 auto;
+}
+.faq-question {
+  background: var(--prussian-blue);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: left;
+  font-weight: bold;
+}
+.faq-answer {
+  background: var(--alice-blue);
+  color: var(--onyx);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* =======================
+   #Responsive
+======================= */
+@media (max-width: 768px) {
+  .review-card,
+  .faq-card {
+    flex: 0 0 80%;
+    min-height: 250px;
+  }
+}

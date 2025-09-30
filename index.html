@@ -108,15 +108,8 @@
             <ion-icon name="chevron-forward"></ion-icon>
           </a>
         <li class="navbar-item">
-          <a href="#newsletter" class="navbar-link" data-nav-link>
-            <span>Contact</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-        <li class="navbar-item">
           <a href="#formular" class="navbar-link" data-nav-link>
-            <span>Get a Quote</span>
+            <span>Reach Us</span>
 
             <ion-icon name="chevron-forward"></ion-icon>
           </a>
@@ -848,42 +841,82 @@
 
       </div>
     </section>
+    <!-- =======================
+     #REVIEWS
+   ======================= -->
+    <section class="section reviews" id="reviews" aria-label="reviews">
+      <div class="container">
+        <p class="section-subtitle">Customer Reviews</p>
+        <h2 class="h2 section-title">What Our Clients Say</h2>
+        <div class="reviews-carousel">
+          <div class="review-card">
+            <p class="review-text">"Fast and reliable! My car arrived earlier than expected."</p>
+            <h3 class="review-author">– John D.</h3>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Professional service, excellent communication throughout the process."</p>
+            <h3 class="review-author">– Maria S.</h3>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"I shipped 3 cars and everything went perfectly. Highly recommend!"</p>
+            <h3 class="review-author">– Alex P.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      #CALCULATOR
+    ======================= -->
+    <section class="section calculator" id="calculator" aria-label="calculator">
+      <div class="container">
+        <p class="section-subtitle">Price Estimator</p>
+        <h2 class="h2 section-title">Transport Cost Calculator</h2>
+        <form id="calcForm" class="calc-form">
+          <label for="cars">Number of Cars:</label>
+          <input type="number" id="cars" name="cars" min="1" value="1" required>
+
+          <label for="distance">Distance (miles):</label>
+          <input type="number" id="distance" name="distance" min="10" required>
+
+          <label for="type">Transport Type:</label>
+          <select id="type" name="type">
+            <option value="open">Open Carrier</option>
+            <option value="enclosed">Enclosed Carrier</option>
+          </select>
+
+          <button type="submit" class="btn">Calculate</button>
+        </form>
+        <p id="calcResult" class="calc-result"></p>
+      </div>
+    </section>
+
+    <!-- =======================
+      #FAQ
+    ======================= -->
+    <section class="section faq" id="faq" aria-label="faq">
+      <div class="container">
+        <p class="section-subtitle">FAQs</p>
+        <h2 class="h2 section-title">Frequently Asked Questions</h2>
+        <div class="faq-carousel">
+          <div class="faq-card">
+            <div class="faq-question">❓ How long does shipping take?</div>
+            <div class="faq-answer">💬 Most shipments take 5–7 business days depending on distance.</div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-question">❓ Are my cars insured during transport?</div>
+            <div class="faq-answer">💬 Yes, all vehicles are fully insured while in transit.</div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-question">❓ Can I ship multiple cars at once?</div>
+            <div class="faq-answer">💬 Absolutely! We can arrange transport for several cars in the same order.</div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!--
       - #NEWSLETTER
     -->
-
-    <section id="newsletter" class="section newsletter" aria-label="newsletter">
-      <div class="container">
-
-        <figure class="newsletter-banner img-holder">
-          <img src="./assets/images/Trucker.png" width="403" height="481" alt="newsletter banner">
-        </figure>
-
-        <div class="newsletter-content">
-
-          <h2 class="h2 section-title wavy-text">
-            <span>Y</span><span>o</span><span>u</span><span> </span>
-            <span>c</span><span>a</span><span>n</span><span>'</span><span>t</span><span> </span>
-            <span>c</span><span>a</span><span>l</span><span>l</span><span>?</span><span> </span>
-            <span>I</span><span>t</span><span> </span>
-            <span>i</span><span>s</span><span> </span><span>o</span<span>k</span><span>a</span><span>y</span>
-            <span>w</span><span>e</span><span> </span>
-            <span>a</span><span>r</span><span>e</span><span> </span>
-            <span>j</span><span>u</span><span>s</span><span>t</span><span> </span>
-            <span>a</span><span>n</span><span> </span><span> </span><span> </span> </span><span> </span>
-            <span>e</span><span>m</span><span>a</span><span>i</span><span>l</span><span> </span>
-            <span>a</span><span>w</span><span>a</span><span>y</span>
-          </h2>
-
-
-          <a href="https://compose.mail.yahoo.com/?to=damuresan954S@yahoo.com&subject=Salut&body=Mesajul%20tau%20aici" target="_blank">
-            <button type="button" class="newsletter-btn" style="margin-top:40px; margin-left:20px;">Contact us now</button>
-          </a>
-
-
-        </div>
-    </section>
-
   </article>
 
   <section class="contact-section" aria-label="formular" id="formular">

@@ -354,7 +354,16 @@ const form = document.getElementById('contact-form');
     }
   });
 });
-
+ document.getElementById("calcForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const cars = parseInt(document.getElementById("cars").value);
+        const distance = parseInt(document.getElementById("distance").value);
+        const type = document.getElementById("type").value;
+        let rate = type === "open" ? 0.5 : 0.8; // $/mile
+        let total = cars * distance * rate;
+        document.getElementById("calcResult").textContent =
+          "Estimated Cost: $" + total.toFixed(2);
+      });
 
 
 
