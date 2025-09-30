@@ -4310,7 +4310,7 @@ html, body {
     background: var(--white, #fff);
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   }
-  #zones .route-title { font-size: 1.3rem; margin-bottom: 10px; color: var(--prussian-blue); text-align:left; }
+  #zones .route-title { font-size: 1.3rem; margin-bottom: 10px; color: var(--prussian-blue); text-align:center; }
   #zones .route-cards {
     display:flex;
     align-items:center;
@@ -4336,22 +4336,106 @@ html, body {
   #zones.routes-expanded #extra-routes { max-height: 2000px; }
 
   /* Button */
-  .routes-btn-wrapper { display:flex; justify-content:center; margin-top:18px; }
-  .routes-btn {
-    background: var(--dark-orange, #ff6600);
-    color: #fff;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-weight:700;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  .routes-btn[aria-expanded="true"] { background: var(--prussian-blue, #123456); }
+ .routes-btn-wrapper {
+   display:flex;
+   justify-content:center;
+   margin-top:28px;   /* mai mult spațiu sus */
+ }
 
+ .routes-btn {
+   background: var(--dark-orange, #ff6600);
+   color: #fff;
+   border: none;
+   padding: 16px 36px;   /* mai lat și mai înalt */
+   border-radius: 12px;  /* colțuri mai rotunjite */
+   font-weight: 700;
+   cursor: pointer;
+   font-size: 1.2rem;    /* text mai mare */
+   box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* umbră pentru evidențiere */
+   transition: background 0.3s ease, transform 0.2s ease;
+ }
+
+ .routes-btn:hover {
+   background: #e65c00;   /* nuanță mai închisă */
+   transform: translateY(-2px); /* efect de ridicare */
+ }
+
+ .routes-btn[aria-expanded="true"] {
+   background: var(--prussian-blue, #123456);
+ }
   /* Responsive */
   @media (max-width:720px) {
     #zones .zone-card.small { width:92px; padding:8px; }
     #zones .card-icon { width:52px; height:52px; }
     #zones .route-title { font-size:1.05rem; }
+  }
+  /* Card mare pentru rute */
+  #zones .route-block {
+    margin: 28px 0;
+    padding: 28px;
+    border-radius: 14px;
+    background: var(--white, #fff);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #zones .route-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  }
+
+  /* Titlu rută */
+  #zones .route-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: var(--prussian-blue, #123456);
+    font-weight: 700;
+  }
+
+  /* Carduri mici (statele) */
+  #zones .route-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  #zones .zone-card.small {
+    width: 150px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #fdfdfd;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+  }
+
+  #zones .zone-card.small:hover {
+    transform: scale(1.05);
+  }
+
+  #zones .card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+  }
+
+  #zones .card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #zones .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--onyx, #333);
+  }
+
+  /* Săgețile între carduri */
+  #zones .route-arrow {
+    font-size: 2rem;
+    color: var(--dark-orange, #ff6600);
+    font-weight: bold;
   }
