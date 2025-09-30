@@ -2018,7 +2018,7 @@ section.newsletter {
   opacity: 0;
   transform: translateY(50px); /* start din jos */
   transition: all 2.1s ease;
-    background-color: var(--white);
+    background-color: aliceblue;
 
 }
 
@@ -4735,4 +4735,76 @@ body.dark-mode .review-card {
 
 body.dark-mode .review-card h3 {
   color: var(--dark-orange);
+}
+/* WHO WE SERVE */
+.section.who-we-serve {
+  padding: 60px 20px;
+  background-color: #fff; /* light mode default */
+  text-align: center;
+}
+
+.who-we-serve .section-title {
+  margin-bottom: 40px;
+    color: var(--dark-orange); /* scrisul devine portocaliu */
+
+}
+
+.serve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.serve-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.serve-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.serve-card p {
+  font-weight: 600;
+  color: var(--dark-orange);
+}
+
+/* Hover efect */
+.serve-card:hover {
+  background: var(--dark-orange);
+  color: #fff;
+}
+.serve-card:hover p {
+  color: #fff;
+}
+
+/* Dark mode */
+body.dark-mode .section.who-we-serve {
+  background-color: #1e2a38; /* culoarea pe care o vrei pentru dark mode */
+}
+
+body.dark-mode .serve-card {
+  background: #243447;
+  box-shadow: none;
+}
+
+body.dark-mode .serve-card p {
+  color: var(--dark-orange);
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* ascunde bara */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
 }
