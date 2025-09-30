@@ -397,3 +397,23 @@ const form = document.getElementById('contact-form');
         // Arată primul review
         showReview(0);
 
+ document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("cookieModal");
+    const acceptBtn = document.getElementById("acceptCookies");
+    const declineBtn = document.getElementById("declineCookies");
+
+    // Arată modalul doar dacă nu există preferință salvată
+    if (!localStorage.getItem("cookieConsent")) {
+      modal.style.display = "flex";
+    }
+
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "accepted");
+      modal.style.display = "none";
+    });
+
+    declineBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "declined");
+      modal.style.display = "none";
+    });
+  });

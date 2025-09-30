@@ -4117,3 +4117,71 @@ body.dark-mode .form-btn:hover {
   margin-right: auto;
   display: block;
 }
+/* =======================
+   #COOKIE MODAL
+======================= */
+.cookie-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* fundal opac */
+  display: none; /* ascuns implicit */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.cookie-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow-2);
+  animation: fadeIn 0.5s ease;
+}
+
+.cookie-content h3 {
+  margin-bottom: 10px;
+  color: var(--prussian-blue);
+}
+
+.cookie-content p {
+  font-size: var(--fs-7);
+  margin-bottom: 20px;
+  color: var(--onyx);
+}
+
+.cookie-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-accept {
+  background: var(--dark-orange);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-accept:hover { background: #d35400; }
+
+.btn-decline {
+  background: var(--light-gray);
+  color: var(--onyx);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-decline:hover { background: #aaa; }
+
+/* Mic efect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
