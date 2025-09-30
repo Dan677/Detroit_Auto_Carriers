@@ -4808,3 +4808,38 @@ body.dark-mode .serve-card p {
 html {
   scrollbar-width: none;
 }
+@media (max-width: 768px) {
+  .advantages-top {
+    flex-direction: column;   /* poza sus, timeline jos */
+    align-items: center;
+  }
+
+  .advantages-image img {
+    max-width: 90%;  /* poza mai mare */
+    margin-bottom: 30px; /* spațiu între poză și timeline */
+  }
+
+  .timeline {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .flip-card {
+    perspective: none; /* scoatem efectul 3D */
+  }
+
+  .flip-card-inner {
+    transform: none !important;  /* dezactivează flip */
+  }
+
+  .flip-card-back {
+    position: relative;
+    transform: none;
+    backface-visibility: visible;
+    background: var(--dark-orange);
+    color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 12px;
+  }
+}
