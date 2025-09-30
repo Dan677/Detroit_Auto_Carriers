@@ -4110,3 +4110,10 @@ body.dark-mode .form-btn:hover {
   transition: background 0.3s;
 }
 .dot.active, .dot:hover { background-color: var(--dark-orange); }
+.reviews .section-title,
+.reviews .section-subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
