@@ -4043,3 +4043,90 @@ body.dark-mode .form-btn:hover {
     min-height: 250px;
   }
 }
+.review-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px auto;
+  border: 2px solid var(--dark-orange);
+}
+
+/* Social buttons */
+.review-socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.social-btn.insta { background: #E4405F; }
+.social-btn.insta:hover { background: #c12d4a; }
+
+.social-btn.fb { background: #1877F2; }
+.social-btn.fb:hover { background: #0f5dc8; }
+/* Reviews Carousel */
+.reviews-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviews-carousel {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.review-card {
+  flex: 0 0 100%;
+  display: none; /* ascundem, doar unul vizibil */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Butoane next/prev */
+.carousel-btn {
+  background: var(--dark-orange);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.carousel-btn:hover { background: #d35400; }
+
+.prev { position: absolute; left: -50px; }
+.next { position: absolute; right: -50px; }
+
+/* Dots */
+.carousel-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.dot.active, .dot:hover { background-color: var(--dark-orange); }

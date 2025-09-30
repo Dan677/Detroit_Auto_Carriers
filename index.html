@@ -114,6 +114,27 @@
             <ion-icon name="chevron-forward"></ion-icon>
           </a>
         </li>
+        <li class="navbar-item">
+          <a href="#calculator" class="navbar-link" data-nav-link>
+            <span>Calculator</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a href="#reviews" class="navbar-link" data-nav-link>
+            <span>Reviews</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a href="#faq" class="navbar-link" data-nav-link>
+            <span>FAQS</span>
+
+            <ion-icon name="chevron-forward"></ion-icon>
+          </a>
+        </li>
 
       </ul>
 
@@ -848,20 +869,76 @@
       <div class="container">
         <p class="section-subtitle">Customer Reviews</p>
         <h2 class="h2 section-title">What Our Clients Say</h2>
-        <div class="reviews-carousel">
-          <div class="review-card">
-            <p class="review-text">"Fast and reliable! My car arrived earlier than expected."</p>
-            <h3 class="review-author">– John D.</h3>
+
+        <div class="reviews-wrapper">
+          <button class="carousel-btn prev" onclick="moveReview(-1)">&#10094;</button>
+
+          <div class="reviews-carousel">
+            <div class="review-card">
+              <img src="assets/images/client1.jpg" alt="John D." class="review-img">
+              <p class="review-text">"Fast and reliable! My car arrived earlier than expected."</p>
+              <h3 class="review-author">– John D.</h3>
+              <div class="review-socials">
+                <a href="https://instagram.com" target="_blank" class="social-btn insta" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.8 0 5.7 0 7c0 1.3 0 1.7.1 5s0 3.7.1 5c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.9.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.2C21.4 1.3 20.7.9 20 .6c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0z"/>
+                    <path d="M12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.6a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
+                  </svg>
+                </a>
+
+                <a href="https://facebook.com" target="_blank" class="social-btn fb" aria-label="Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.326v21.348C0 23.4.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.1 2.795.144v3.24l-1.92.001c-1.507 0-1.8.717-1.8 1.767v2.317h3.6l-.468 3.622h-3.132V24h6.134C23.403 24 24 23.4 24 22.674V1.326C24 .6 23.403 0 22.675 0z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <img src="assets/images/client2.jpg" alt="Maria S." class="review-img">
+              <p class="review-text">"Professional service, excellent communication throughout the process."</p>
+              <h3 class="review-author">– Maria S.</h3>
+              <div class="review-socials">
+                <a href="https://instagram.com" target="_blank" class="social-btn insta" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.8 0 5.7 0 7c0 1.3 0 1.7.1 5s0 3.7.1 5c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.9.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.2C21.4 1.3 20.7.9 20 .6c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0z"/>
+                    <path d="M12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.6a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
+                  </svg>
+                </a>
+
+                <a href="https://facebook.com" target="_blank" class="social-btn fb" aria-label="Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.326v21.348C0 23.4.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.1 2.795.144v3.24l-1.92.001c-1.507 0-1.8.717-1.8 1.767v2.317h3.6l-.468 3.622h-3.132V24h6.134C23.403 24 24 23.4 24 22.674V1.326C24 .6 23.403 0 22.675 0z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <img src="assets/images/client3.jpg" alt="Alex P." class="review-img">
+              <p class="review-text">"I shipped 3 cars and everything went perfectly. Highly recommend!"</p>
+              <h3 class="review-author">– Alex P.</h3>
+              <div class="review-socials">
+                <a href="https://instagram.com" target="_blank" class="social-btn insta" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.8 0 5.7 0 7c0 1.3 0 1.7.1 5s0 3.7.1 5c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.9.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.2C21.4 1.3 20.7.9 20 .6c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0z"/>
+                    <path d="M12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.6a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
+                  </svg>
+                </a>
+
+                <a href="https://facebook.com" target="_blank" class="social-btn fb" aria-label="Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.326v21.348C0 23.4.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.1 2.795.144v3.24l-1.92.001c-1.507 0-1.8.717-1.8 1.767v2.317h3.6l-.468 3.622h-3.132V24h6.134C23.403 24 24 23.4 24 22.674V1.326C24 .6 23.403 0 22.675 0z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="review-card">
-            <p class="review-text">"Professional service, excellent communication throughout the process."</p>
-            <h3 class="review-author">– Maria S.</h3>
-          </div>
-          <div class="review-card">
-            <p class="review-text">"I shipped 3 cars and everything went perfectly. Highly recommend!"</p>
-            <h3 class="review-author">– Alex P.</h3>
-          </div>
+
+          <button class="carousel-btn next" onclick="moveReview(1)">&#10095;</button>
         </div>
+
+        <div class="carousel-dots" id="review-dots"></div>
       </div>
     </section>
 

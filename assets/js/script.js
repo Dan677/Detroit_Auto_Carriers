@@ -364,6 +364,39 @@ const form = document.getElementById('contact-form');
         document.getElementById("calcResult").textContent =
           "Estimated Cost: $" + total.toFixed(2);
       });
+      let reviewIndex = 0;
+        const reviews = document.querySelectorAll(".review-card");
+        const dotsContainer = document.getElementById("review-dots");
+
+        // Generează buline
+        reviews.forEach((_, i) => {
+          let dot = document.createElement("span");
+          dot.classList.add("dot");
+          dot.addEventListener("click", () => showReview(i));
+          dotsContainer.appendChild(dot);
+        });
+
+        function showReview(n) {
+          if (n >= reviews.length) reviewIndex = 0;
+          else if (n < 0) reviewIndex = reviews.length - 1;
+          else reviewIndex = n;
+
+          reviews.forEach((review, i) => {
+            review.style.display = i === reviewIndex ? "flex" : "none";
+          });
+
+          document.querySelectorAll("#review-dots .dot").forEach((dot, i) => {
+            dot.classList.toggle("active", i === reviewIndex);
+          });
+        }
+
+        function moveReview(step) {
+          showReview(reviewIndex + step);
+        }
+
+        // Arată primul review
+        showReview(0);
+
 
 
 
