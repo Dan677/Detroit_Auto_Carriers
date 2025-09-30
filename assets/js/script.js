@@ -1,60 +1,68 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   /**
    * NAVBAR TOGGLE
    */
-  const navbar = document.querySelector("[data-navbar]");
-  const navToggler = document.querySelectorAll("[data-nav-toggler]");
-  const navLinks = document.querySelectorAll("[data-nav-link]");
-  const overlay = document.querySelector("[data-overlay]");
+  const navbar = document.querySelector('[data-navbar]');
+  const navToggler = document.querySelectorAll('[data-nav-toggler]');
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const overlay = document.querySelector('[data-overlay]');
 
-  navToggler.forEach(toggler => {
-    toggler.addEventListener("click", () => {
-      navbar.classList.toggle("active");
-      overlay.classList.toggle("active");
+  if (navbar && navToggler && navLinks && overlay) {
+    navToggler.forEach(toggler => {
+      toggler.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        overlay.classList.toggle('active');
+      });
     });
-  });
 
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      navbar.classList.remove("active");
-      overlay.classList.remove("active");
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+      });
     });
-  });
+  }
 
+  /**
+   * SMOOTH SCROLL FOR #newsletter LINKS
+   */
   document.querySelectorAll('a[href^="#newsletter"]').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      const offset = 50;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const targetRect = target.getBoundingClientRect().top;
-      const scrollToPosition = targetRect - bodyRect - offset;
+      if (target) {
+        const offset = 50;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const targetRect = target.getBoundingClientRect().top;
+        const scrollToPosition = targetRect - bodyRect - offset;
 
-      window.scrollTo({
-        top: scrollToPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: scrollToPosition,
+          behavior: 'smooth',
+        });
+      }
     });
   });
 
   /**
    * HEADER SCROLL AND BACK TO TOP BUTTON
    */
-  const header = document.querySelector("[data-header]");
-  const backTopBtn = document.querySelector("[data-back-top-btn]");
+  const header = document.querySelector('[data-header]');
+  const backTopBtn = document.querySelector('[data-back-top-btn]');
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= 100) {
-      header.classList.add("active");
-      backTopBtn.classList.add("active");
-    } else {
-      header.classList.remove("active");
-      backTopBtn.classList.remove("active");
-    }
-  });
+  if (header && backTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 100) {
+        header.classList.add('active');
+        backTopBtn.classList.add('active');
+      } else {
+        header.classList.remove('active');
+        backTopBtn.classList.remove('active');
+      }
+    });
+  }
 
   /**
    * ZONE CARDS TOOLTIP
@@ -65,56 +73,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const tooltipCars = document.getElementById('tooltip-cars');
   const tooltipClients = document.getElementById('tooltip-clients');
 
-  let hideTimeout;
+  if (tooltip && tooltipCity && tooltipCars && tooltipClients) {
+    let hideTimeout;
+    zoneCards.forEach(card => {
+      card.addEventListener('mouseenter', (e) => {
+        if (hideTimeout) clearTimeout(hideTimeout);
+        const city = card.querySelector('.card-title').textContent;
+        let cars = card.dataset.cars || 0;
+        let clients = card.dataset.clients || 0;
+        if (city === 'Chicago') { cars = 120; clients = 80; }
+        else if (city === 'Texas') { cars = 50; clients = 30; }
+        else if (city === 'Michigan') { cars = 60; clients = 57; }
+        tooltipCity.textContent = city;
+        tooltipCars.textContent = `🚗 Cars Delivered: ${cars}`;
+        tooltipClients.textContent = `👥 Clients Served: ${clients}`;
+        tooltip.style.display = 'block';
+        tooltip.style.opacity = '1';
+      });
 
-  zoneCards.forEach(card => {
-    card.addEventListener('mouseenter', (e) => {
-      if(hideTimeout) clearTimeout(hideTimeout);
-      const city = card.querySelector('.card-title').textContent;
-      let cars = card.dataset.cars;
-      let clients = card.dataset.clients;
-      if(city === "Chicago") { cars = 120; clients = 80; }
-      else if(city === "Texas") { cars = 50; clients = 30; }
-      else if(city === "Michigan") { cars = 60; clients = 57; }
-      tooltipCity.textContent = city;
-      tooltipCars.textContent = `🚗 Cars Delivered: ${cars}`;
-      tooltipClients.textContent = `👥 Clients Served: ${clients}`;
-      tooltip.style.display = 'block';
-      tooltip.style.opacity = '1';
-    });
+      card.addEventListener('mousemove', (e) => {
+        tooltip.style.left = e.pageX + 15 + 'px';
+        tooltip.style.top = e.pageY + 15 + 'px';
+      });
 
-    card.addEventListener('mousemove', (e) => {
-      tooltip.style.left = e.pageX + 15 + 'px';
-      tooltip.style.top = e.pageY + 15 + 'px';
+      card.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+        hideTimeout = setTimeout(() => {
+          tooltip.style.display = 'none';
+        }, 300);
+      });
     });
-
-    card.addEventListener('mouseleave', () => {
-      tooltip.style.opacity = '0';
-      hideTimeout = setTimeout(() => {
-        tooltip.style.display = 'none';
-      }, 300);
-    });
-  });
+  }
 
   /**
-   * READ MORE BUTTONS (if applicable to other sections)
+   * READ MORE BUTTONS
    */
-  const readMoreButtons = document.querySelectorAll(".read-more-btn");
+  const readMoreButtons = document.querySelectorAll('.read-more-btn');
   readMoreButtons.forEach(button => {
-    button.addEventListener("click", function(event) {
+    button.addEventListener('click', function (event) {
       event.preventDefault();
-      const card = button.closest(".card-content");
-      const output = card.querySelector(".extra-text");
-      const label = button.querySelector(".span");
-      const message = button.getAttribute("data-text");
-      const isHidden = window.getComputedStyle(output).display === "none";
+      const card = button.closest('.card-content');
+      const output = card.querySelector('.extra-text');
+      const label = button.querySelector('.span');
+      const message = button.getAttribute('data-text');
+      const isHidden = window.getComputedStyle(output).display === 'none';
       if (isHidden) {
         output.innerText = message;
-        output.style.display = "block";
-        label.innerText = "Close details";
+        output.style.display = 'block';
+        label.innerText = 'Close details';
       } else {
-        output.style.display = "none";
-        label.innerText = "Read More";
+        output.style.display = 'none';
+        label.innerText = 'Read More';
       }
     });
   });
@@ -123,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
    * BLOG POSTS "VIEW DETAIL" BUTTONS
    */
   const blogButtons = document.querySelectorAll('.posts-card .btn-link');
-
   blogButtons.forEach(button => {
     const card = button.closest('.posts-card');
     const cardText = card.querySelector('.card-text');
@@ -153,295 +161,206 @@ document.addEventListener('DOMContentLoaded', () => {
   const footerElem = document.querySelector('.footer');
   const projectCards = document.querySelectorAll('.project-card');
 
-  toggleSwitch.addEventListener('change', () => {
-    const isDark = toggleSwitch.checked;
-    document.body.classList.toggle('dark-mode', isDark);
-    headerElem.classList.toggle('dark-mode', isDark);
-    footerElem.classList.toggle('dark-mode', isDark);
-    projectCards.forEach(card => card.classList.toggle('dark-mode', isDark));
+  if (toggleSwitch) {
+    toggleSwitch.addEventListener('change', () => {
+      const isDark = toggleSwitch.checked;
+      document.body.classList.toggle('dark-mode', isDark);
+      if (headerElem) headerElem.classList.toggle('dark-mode', isDark);
+      if (footerElem) footerElem.classList.toggle('dark-mode', isDark);
+      projectCards.forEach(card => card.classList.toggle('dark-mode', isDark));
+    });
+  }
+
+  /**
+   * IN-VIEW ANIMATIONS
+   */
+  const sections = [
+    '.hero-content',
+    '.about-content',
+    '.service',
+    '.zone',
+    '.project',
+    '.blog',
+    '.Posts',
+    '.newsletter',
+    '.footer',
+    '.header',
+  ];
+
+  sections.forEach(selector => {
+    const section = document.querySelector(selector);
+    if (section) {
+      const checkInView = () => {
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          section.classList.add('show');
+        } else {
+          section.classList.remove('show');
+        }
+      };
+      window.addEventListener('load', checkInView);
+      window.addEventListener('scroll', checkInView);
+    }
   });
 
-  const heroContent = document.querySelector(".hero-content");
-
-  function checkHeroInView() {
-    const rect = heroContent.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      heroContent.classList.add("show");
-    } else {
-      heroContent.classList.remove("show");
-    }
-  }
-
-  // verificare la load (inclusiv redirecționare #home)
-  window.addEventListener("load", checkHeroInView);
-  // verificare la scroll
-  window.addEventListener("scroll", checkHeroInView);
-  const aboutContent = document.querySelector(".about-content");
-
-  function checkAboutInView() {
-    const rect = aboutContent.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      aboutContent.classList.add("show");
-    } else {
-      aboutContent.classList.remove("show");
-    }
-  }
-
-  // verificare la scroll și load
-  window.addEventListener("load", checkAboutInView);
-  window.addEventListener("scroll", checkAboutInView);
-  const serviceSection = document.querySelector(".service");
-
-  function checkServiceInView() {
-    const rect = serviceSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      serviceSection.classList.add("show");
-    } else {
-      serviceSection.classList.remove("show");
-    }
-  }
-
-  // verificare la scroll și load
-  window.addEventListener("load", checkServiceInView);
-  window.addEventListener("scroll", checkServiceInView);
-
-  const zoneSection = document.querySelector(".zone");
-
-  function checkZoneInView() {
-    const rect = zoneSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      zoneSection.classList.add("show");
-    } else {
-      zoneSection.classList.remove("show");
-    }
-  }
-
-  // verificare la load și scroll
-  window.addEventListener("load", checkZoneInView);
-  window.addEventListener("scroll", checkZoneInView);
-
-  const projectSection = document.querySelector(".project");
-
-  function checkProjectInView() {
-    const rect = projectSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      projectSection.classList.add("show");
-    } else {
-      projectSection.classList.remove("show");
-    }
-  }
-
-  // verificare la load și scroll
-  window.addEventListener("load", checkProjectInView);
-  window.addEventListener("scroll", checkProjectInView);
-
-  const blogSection = document.querySelector(".blog");
-
-  function checkBlogInView() {
-    const rect = blogSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      blogSection.classList.add("show");
-    } else {
-      blogSection.classList.remove("show");
-    }
-  }
-
-  // verificare la load și scroll
-  window.addEventListener("load", checkBlogInView);
-  window.addEventListener("scroll", checkBlogInView);
-
-  const postsSection = document.querySelector(".Posts");
-
-  function checkPostsInView() {
-    const rect = postsSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      postsSection.classList.add("show");
-    } else {
-      postsSection.classList.remove("show");
-    }
-  }
-
-  // verificare la load și scroll
-  window.addEventListener("load", checkPostsInView);
-  window.addEventListener("scroll", checkPostsInView);
-
-  const newsletterSection = document.querySelector(".newsletter");
-
-  function checkNewsletterInView() {
-    const rect = newsletterSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      newsletterSection.classList.add("show");
-    } else {
-      newsletterSection.classList.remove("show");
-    }
-  }
-
-  // verificare la load și scroll
-  window.addEventListener("load", checkNewsletterInView);
-  window.addEventListener("scroll", checkNewsletterInView);
-
-  const footerSection = document.querySelector(".footer");
-
-  function checkFooterInView() {
-    const rect = footerSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      footerSection.classList.add("show");
-    } else {
-      footerSection.classList.remove("show");
-    }
-  }
-  // verificare la load și scroll
-  window.addEventListener("load", checkFooterInView);
-  window.addEventListener("scroll", checkFooterInView);
-
-  const headerSection = document.querySelector(".header");
-
-  function checkHeaderInView() {
-    const rect = headerSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      headerSection.classList.add("show");
-    } else {
-      headerSection.classList.remove("show");
-    }
-  }
-
-  window.addEventListener("load", checkHeaderInView);
-  window.addEventListener("scroll", checkHeaderInView);
-
-const form = document.getElementById('contact-form');
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    try {
-      const response = await fetch('https://formspree.io/f/mldwkypw', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-      if (response.ok) {
-        form.reset();
-      } else {
-        // Aici poți arăta un mesaj de eroare
-        alert('A apărut o problemă la trimiterea formularului.');
-      }
-    } catch (error) {
-      // Aici poți gestiona erorile de rețea
-      alert('A apărut o eroare de rețea.');
-    }
-  });
-});
- document.getElementById("calcForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        const cars = parseInt(document.getElementById("cars").value);
-        const distance = parseInt(document.getElementById("distance").value);
-        const type = document.getElementById("type").value;
-        let rate = type === "open" ? 0.5 : 0.8; // $/mile
-        let total = cars * distance * rate;
-        document.getElementById("calcResult").textContent =
-          "Estimated Cost: $" + total.toFixed(2);
-      });
-      let reviewIndex = 0;
-        const reviews = document.querySelectorAll(".review-card");
-        const dotsContainer = document.getElementById("review-dots");
-
-        // Generează buline
-        reviews.forEach((_, i) => {
-          let dot = document.createElement("span");
-          dot.classList.add("dot");
-          dot.addEventListener("click", () => showReview(i));
-          dotsContainer.appendChild(dot);
+  /**
+   * CONTACT FORM
+   */
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      try {
+        const response = await fetch('https://formspree.io/f/mldwkypw', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(data),
         });
-
-        function showReview(n) {
-          if (n >= reviews.length) reviewIndex = 0;
-          else if (n < 0) reviewIndex = reviews.length - 1;
-          else reviewIndex = n;
-
-          reviews.forEach((review, i) => {
-            review.style.display = i === reviewIndex ? "flex" : "none";
-          });
-
-          document.querySelectorAll("#review-dots .dot").forEach((dot, i) => {
-            dot.classList.toggle("active", i === reviewIndex);
-          });
+        if (response.ok) {
+          form.reset();
+        } else {
+          alert('A apărut o problemă la trimiterea formularului.');
         }
+      } catch (error) {
+        alert('A apărut o eroare de rețea.');
+      }
+    });
+  }
 
-        function moveReview(step) {
-          showReview(reviewIndex + step);
-        }
+  /**
+   * CALCULATOR FORM
+   */
+  const calcForm = document.getElementById('calcForm');
+  if (calcForm) {
+    calcForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const cars = parseInt(document.getElementById('cars').value);
+      const distance = parseInt(document.getElementById('distance').value);
+      const type = document.getElementById('type').value;
+      let rate = type === 'open' ? 0.5 : 0.8; // $/mile
+      let total = cars * distance * rate;
+      document.getElementById('calcResult').textContent = 'Estimated Cost: $' + total.toFixed(2);
+    });
+  }
 
-        // Arată primul review
-        showReview(0);
+  /**
+   * COOKIE MODAL
+   */
+  const modal = document.getElementById('cookieModal');
+  const acceptBtn = document.getElementById('acceptCookies');
+  const declineBtn = document.getElementById('declineCookies');
 
- document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("cookieModal");
-    const acceptBtn = document.getElementById("acceptCookies");
-    const declineBtn = document.getElementById("declineCookies");
-
-    // Arată modalul doar dacă nu există preferință salvată
-    if (!localStorage.getItem("cookieConsent")) {
-      modal.style.display = "flex";
+  if (modal && acceptBtn && declineBtn) {
+    if (!localStorage.getItem('cookieConsent')) {
+      modal.style.display = 'flex';
     }
 
-    acceptBtn.addEventListener("click", () => {
-      localStorage.setItem("cookieConsent", "accepted");
-      modal.style.display = "none";
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      modal.style.display = 'none';
     });
 
-    declineBtn.addEventListener("click", () => {
-      localStorage.setItem("cookieConsent", "declined");
-      modal.style.display = "none";
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'declined');
+      modal.style.display = 'none';
     });
-  });
-// Carousel logic
-const track = document.querySelector('.reviews-track');
-const cards = document.querySelectorAll('.review-card');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
+  }
 
-let index = 0;
-const total = cards.length;
+  /**
+   * TOGGLE ROUTES
+   */
+  const zones = document.getElementById('zones');
+  const toggleBtn = document.getElementById('toggle-routes');
+  const extra = document.getElementById('extra-routes');
 
-function updateCarousel() {
-  track.style.transform = `translateX(-${index * 100}%)`;
-}
+  if (zones && toggleBtn && extra) {
+    console.log('Zones:', zones);
+    console.log('ToggleBtn:', toggleBtn);
+    console.log('Extra:', extra);
 
-nextBtn.addEventListener('click', () => {
-  index = (index + 1) % total;
-  updateCarousel();
+    // Setare inițială
+    zones.classList.remove('routes-expanded');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    extra.setAttribute('aria-hidden', 'true');
+
+    // Logica de click
+    toggleBtn.addEventListener('click', () => {
+      console.log('Butonul toggle-routes a fost apăsat!');
+      const expanded = zones.classList.toggle('routes-expanded');
+      toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      toggleBtn.textContent = expanded ? 'Less Routes' : 'More Routes';
+      extra.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+    });
+  } else {
+    console.warn('Routes toggle: element missing', { zones, toggleBtn, extra });
+  }
+
+  /**
+   * REVIEW CAROUSEL
+   */
+  const track = document.querySelector('.reviews-track');
+  const cards = document.querySelectorAll('.review-card');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const dotsContainer = document.getElementById('review-dots');
+
+  if (track && cards.length && prevBtn && nextBtn && dotsContainer) {
+    let index = 0;
+    const total = cards.length;
+
+    // Generează buline
+    cards.forEach((_, i) => {
+      let dot = document.createElement('span');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateCarousel();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      document.querySelectorAll('#review-dots .dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    // Evenimente pentru butoane
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % total;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      updateCarousel();
+    });
+
+    // Inițializare
+    updateCarousel();
+
+    // Autoplay (opțional)
+    let autoPlayInterval = setInterval(() => {
+      index = (index + 1) % total;
+      updateCarousel();
+    }, 6000);
+
+    // Oprește autoplay la hover
+    track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    track.addEventListener('mouseleave', () => {
+      autoPlayInterval = setInterval(() => {
+        index = (index + 1) % total;
+        updateCarousel();
+      }, 6000);
+    });
+  } else {
+    console.warn('Review carousel: element missing', { track, cards, prevBtn, nextBtn, dotsContainer });
+  }
 });
-
-prevBtn.addEventListener('click', () => {
-  index = (index - 1 + total) % total;
-  updateCarousel();
-});
-
-// autoplay (optional)
-setInterval(() => {
-  index = (index + 1) % total;
-  updateCarousel();
-}, 6000);

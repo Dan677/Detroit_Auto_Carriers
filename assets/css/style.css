@@ -4303,3 +4303,55 @@ html, body {
 #zones .section-text {
   text-align: center;
 }
+#zones .route-block {
+    margin: 18px 0;
+    padding: 14px;
+    border-radius: 10px;
+    background: var(--white, #fff);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+  #zones .route-title { font-size: 1.3rem; margin-bottom: 10px; color: var(--prussian-blue); text-align:left; }
+  #zones .route-cards {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  #zones .zone-card.small {
+    width:120px;
+    padding:10px;
+    border-radius:8px;
+    text-align:center;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+  }
+  #zones .card-icon { width:64px; height:64px; margin: 0 auto 8px; }
+  #zones .card-icon img { width:100%; height:100%; object-fit:contain; display:block; }
+  #zones .card-title { margin: 0; font-size:1rem; font-weight:600; color:var(--onyx); }
+  #zones .route-arrow { font-size:1.4rem; color:var(--dark-orange); font-weight:700; margin:0 6px; }
+
+  /* Extra routes hidden by default via max-height */
+  #extra-routes { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+  /* when expanded - allow enough space */
+  #zones.routes-expanded #extra-routes { max-height: 2000px; }
+
+  /* Button */
+  .routes-btn-wrapper { display:flex; justify-content:center; margin-top:18px; }
+  .routes-btn {
+    background: var(--dark-orange, #ff6600);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight:700;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .routes-btn[aria-expanded="true"] { background: var(--prussian-blue, #123456); }
+
+  /* Responsive */
+  @media (max-width:720px) {
+    #zones .zone-card.small { width:92px; padding:8px; }
+    #zones .card-icon { width:52px; height:52px; }
+    #zones .route-title { font-size:1.05rem; }
+  }
