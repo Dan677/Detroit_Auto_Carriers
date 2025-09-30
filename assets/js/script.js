@@ -364,3 +364,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('Review carousel: element missing', { track, cards, prevBtn, nextBtn, dotsContainer });
   }
 });
+document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("flipped");
+    });
+  });
