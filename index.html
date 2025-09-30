@@ -115,13 +115,6 @@
           </a>
         </li>
         <li class="navbar-item">
-          <a href="#calculator" class="navbar-link" data-nav-link>
-            <span>Calculator</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-        <li class="navbar-item">
           <a href="#reviews" class="navbar-link" data-nav-link>
             <span>Reviews</span>
 
@@ -175,8 +168,6 @@
 
 
 <main>
-  <article>
-
     <!--
       - #HERO
     -->
@@ -499,55 +490,82 @@
       - #FEATURE
     -->
 
-    <section class="section zone" aria-label="zones" id="zones">
-      <div class="container">
+  <section class="section zone" aria-label="zones" id="zones">
+    <div class="container">
 
-        <div class="title-wrapper">
-          <div>
-            <p class="section-subtitle">Where do we activate?</p>
-            <h2 class="h2 section-title">Here are our locations:</h2>
+      <div class="title-wrapper">
+        <p class="section-subtitle">Our  Weekly Routes</p>
+        <h2 class="h2 section-title">Midwest to South/Southwest</h2>
+      </div>
+
+      <!-- Ruta Michigan - Texas - Michigan -->
+      <div class="route-block">
+        <h3 class="route-title">Michigan – Texas – Michigan</h3>
+        <div class="route-cards">
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/michigan.png" alt="Michigan"></div>
+            <h4 class="card-title">Michigan</h4>
+          </div>
+          <div class="route-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/texas.png" alt="Texas"></div>
+            <h4 class="card-title">Texas</h4>
+          </div>
+          <div class="route-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/michigan.png" alt="Michigan"></div>
+            <h4 class="card-title">Michigan</h4>
           </div>
         </div>
-
-        <ul class="zone-list">
-          <li>
-            <div class="zone-card" style="--card-number: '01'">
-              <div class="card-icon">
-                <img src="./assets/images/michigan.png" width="72" height="91" alt="">
-              </div>
-              <h3 class="h3 card-title">Michigan</h3>
-              <p class="card-text"></p>
-            </div>
-          </li>
-
-          <li>
-            <div class="zone-card" style="--card-number: '02'">
-              <div class="card-icon">
-                <img src="./assets/images/texas.png" width="94" height="94" alt="">
-              </div>
-              <h3 class="h3 card-title">Texas</h3>
-              <p class="card-text"></p>
-            </div>
-          </li>
-
-          <li>
-            <div class="zone-card" style="--card-number: '03'">
-              <div class="card-icon">
-                <img src="./assets/images/Chicago.png" width="93" height="93" alt="">
-              </div>
-              <h3 class="h3 card-title">Chicago</h3>
-              <p class="card-text"></p>
-            </div>
-          </li>
-        </ul>
-
       </div>
-      <div id="zone-tooltip" style="display:none; position:absolute; padding:12px 15px; background:#fff; border:1px solid #ccc; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2); pointer-events:none; z-index:999;">
-        <p id="tooltip-city" style="font-weight:bold; margin:0 0 5px 0;"></p>
-        <p id="tooltip-cars" style="margin:0 0 3px 0;">🚗 Cars Delivered: 0</p>
-        <p id="tooltip-clients" style="margin:0;">👥 Clients Served: 0</p>
+
+      <!-- Ruta Ohio - Oklahoma - Ohio -->
+      <div class="route-block">
+        <h3 class="route-title">Ohio – Oklahoma – Ohio</h3>
+        <div class="route-cards">
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/ohio.png" alt="Ohio"></div>
+            <h4 class="card-title">Ohio</h4>
+          </div>
+          <div class="route-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/oklahoma.png" alt="Oklahoma"></div>
+            <h4 class="card-title">Oklahoma</h4>
+          </div>
+          <div class="route-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/ohio.png" alt="Ohio"></div>
+            <h4 class="card-title">Ohio</h4>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <div class="route-block">
+        <h3 class="route-title">Indiana – Texas – Indiana</h3>
+        <div class="route-cards">
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/ohio.png" alt="Ohio"></div>
+            <h4 class="card-title">Ohio</h4>
+          </div>
+          <div class="route-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/oklahoma.png" alt="Oklahoma"></div>
+            <h4 class="card-title">Oklahoma</h4>
+          </div>
+          <div class="route-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+          <div class="zone-card small">
+            <div class="card-icon"><img src="./assets/images/ohio.png" alt="Ohio"></div>
+            <h4 class="card-title">Ohio</h4>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-text" style="margin-top:30px; text-align:center; font-weight:600;">
+        New lanes being added monthly. Please email for details.
+      </p>
+
+    </div>
+  </section>
     <!--
       - #PROJECT
     -->
@@ -863,112 +881,6 @@
       </div>
     </section>
     <!-- =======================
-     #REVIEWS
-   ======================= -->
-    <section class="section reviews" id="reviews" aria-label="reviews">
-      <div class="container">
-        <p class="section-subtitle">Customer Reviews</p>
-        <h2 class="h2 section-title">What Our Clients Say</h2>
-
-        <div class="reviews-wrapper">
-          <button class="carousel-btn prev" onclick="moveReview(-1)">&#10094;</button>
-
-          <div class="reviews-carousel">
-            <div class="review-card">
-              <img src="assets/images/client1.jpg" alt="John D." class="review-img">
-              <p class="review-text">"Fast and reliable! My car arrived earlier than expected."</p>
-              <h3 class="review-author">– John D.</h3>
-              <div class="review-socials">
-                <a href="https://instagram.com" target="_blank" class="social-btn insta" aria-label="Instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.8 0 5.7 0 7c0 1.3 0 1.7.1 5s0 3.7.1 5c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.9.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.2C21.4 1.3 20.7.9 20 .6c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0z"/>
-                    <path d="M12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.6a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
-                  </svg>
-                </a>
-
-                <a href="https://facebook.com" target="_blank" class="social-btn fb" aria-label="Facebook">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.326v21.348C0 23.4.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.1 2.795.144v3.24l-1.92.001c-1.507 0-1.8.717-1.8 1.767v2.317h3.6l-.468 3.622h-3.132V24h6.134C23.403 24 24 23.4 24 22.674V1.326C24 .6 23.403 0 22.675 0z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="review-card">
-              <img src="assets/images/client2.jpg" alt="Maria S." class="review-img">
-              <p class="review-text">"Professional service, excellent communication throughout the process."</p>
-              <h3 class="review-author">– Maria S.</h3>
-              <div class="review-socials">
-                <a href="https://instagram.com" target="_blank" class="social-btn insta" aria-label="Instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.8 0 5.7 0 7c0 1.3 0 1.7.1 5s0 3.7.1 5c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.9.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.2C21.4 1.3 20.7.9 20 .6c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0z"/>
-                    <path d="M12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.6a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
-                  </svg>
-                </a>
-
-                <a href="https://facebook.com" target="_blank" class="social-btn fb" aria-label="Facebook">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.326v21.348C0 23.4.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.1 2.795.144v3.24l-1.92.001c-1.507 0-1.8.717-1.8 1.767v2.317h3.6l-.468 3.622h-3.132V24h6.134C23.403 24 24 23.4 24 22.674V1.326C24 .6 23.403 0 22.675 0z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="review-card">
-              <img src="assets/images/client3.jpg" alt="Alex P." class="review-img">
-              <p class="review-text">"I shipped 3 cars and everything went perfectly. Highly recommend!"</p>
-              <h3 class="review-author">– Alex P.</h3>
-              <div class="review-socials">
-                <a href="https://instagram.com" target="_blank" class="social-btn insta" aria-label="Instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.8 0 5.7 0 7c0 1.3 0 1.7.1 5s0 3.7.1 5c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.9.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.2C21.4 1.3 20.7.9 20 .6c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0z"/>
-                    <path d="M12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.6a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
-                  </svg>
-                </a>
-
-                <a href="https://facebook.com" target="_blank" class="social-btn fb" aria-label="Facebook">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.326v21.348C0 23.4.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.1 2.795.144v3.24l-1.92.001c-1.507 0-1.8.717-1.8 1.767v2.317h3.6l-.468 3.622h-3.132V24h6.134C23.403 24 24 23.4 24 22.674V1.326C24 .6 23.403 0 22.675 0z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <button class="carousel-btn next" onclick="moveReview(1)">&#10095;</button>
-        </div>
-
-        <div class="carousel-dots" id="review-dots"></div>
-      </div>
-    </section>
-
-    <!-- =======================
-      #CALCULATOR
-    ======================= -->
-    <section class="section calculator" id="calculator" aria-label="calculator">
-      <div class="container">
-        <p class="section-subtitle">Price Estimator</p>
-        <h2 class="h2 section-title">Transport Cost Calculator</h2>
-        <form id="calcForm" class="calc-form">
-          <label for="cars">Number of Cars:</label>
-          <input type="number" id="cars" name="cars" min="1" value="1" required>
-
-          <label for="distance">Distance (miles):</label>
-          <input type="number" id="distance" name="distance" min="10" required>
-
-          <label for="type">Transport Type:</label>
-          <select id="type" name="type">
-            <option value="open">Open Carrier</option>
-            <option value="enclosed">Enclosed Carrier</option>
-          </select>
-
-          <button type="submit" class="btn">Calculate</button>
-        </form>
-        <p id="calcResult" class="calc-result"></p>
-      </div>
-    </section>
-
-    <!-- =======================
       #FAQ
     ======================= -->
     <section class="section faq" id="faq" aria-label="faq">
@@ -994,23 +906,17 @@
     <!--
       - #NEWSLETTER
     -->
-  </article>
 
   <section class="contact-section" aria-label="formular" id="formular">
     <div class="container">
 
       <p class="section-subtitle">Our Form</p>
-      <h2 class="h2 section-title">Complete with your datas</h2>
+      <h2 class="h2 section-title">For an accurate quote please email our team</h2>
 
       <p class="section-text">
         A representative will contact you shortly.
       </p>
       <form id="contact-form" class="contact-form">
-        <div class="form-group">
-          <label for="full_name" class="form-label">Full Name:</label>
-          <input type="text" name="full_name" id="full_name" required placeholder="Your full name">
-        </div>
-
         <div class="form-group">
           <label for="email" class="form-label">Email Address:</label>
           <input type="email" name="email" id="email" required placeholder="example@mail.com">
@@ -1021,6 +927,32 @@
           <input type="tel" name="phone" id="phone" required placeholder="Ex: +1 (555) 123-4567">
         </div>
 
+        <!-- Selectare serviciu -->
+        <div class="form-group">
+          <label for="service" class="form-label">Select Desired Service:</label>
+          <select name="service" id="service" required>
+            <option value="" disabled selected>-- Please choose a service --</option>
+            <option value="vehicle_transport">Vehicle Transport (transport auto)</option>
+            <option value="title_registration">Title & Registration (procesare titluri / înmatriculare)</option>
+            <option value="vehicle_storage">Vehicle Storage (depozitare vehicule)</option>
+            <option value="care_maintenance">Care & Maintenance (întreținere și reparații)</option>
+            <option value="ev_logistics">EV Logistics (logistică pentru vehicule electrice)</option>
+            <option value="vehicle_repossession">Vehicle Repossession (recuperare vehicule)</option>
+            <option value="home_delivery">Home Delivery & Pickup (livrare la domiciliu / preluare)</option>
+          </select>
+        </div>
+
+        <!-- Selectare viteză serviciu -->
+        <div class="form-group">
+          <label for="speed" class="form-label">Speed of Service Preferred:</label>
+          <select name="speed" id="speed" required>
+            <option value="" disabled selected>-- Please choose an option --</option>
+            <option value="next_day">Next Day</option>
+            <option value="3_days">3 Days</option>
+            <option value="5_days">5 Days</option>
+          </select>
+        </div>
+
         <div class="form-group">
           <label for="message" class="form-label">Order Details:</label>
           <textarea name="message" id="message" rows="6" required></textarea>
@@ -1028,8 +960,92 @@
 
         <button type="submit" class="form-btn">Submit Request</button>
       </form>
+
     </div>
   </section>
+  <!--
+  - #REVIEWS
+-->
+  <section class="section reviews" id="reviews" aria-label="reviews">
+    <div class="container">
+      <p class="section-subtitle">Customer Reviews</p>
+      <h2 class="h2 section-title">What Our Clients Say</h2>
+      <p class="section-text">
+        Real feedback from people who trust us to move their cars safely. See what they say about our service.
+      </p>
+
+      <ul class="reviews-list grid-list">
+        <!-- Review 1 -->
+        <li>
+          <article class="review-card">
+            <div class="review-top">
+              <figure class="client-photo img-holder" style="--width:80; --height:80;">
+                <img src="./assets/images/client1.jpg" alt="Client 1" class="img-cover">
+              </figure>
+              <div class="client-meta">
+                <h3 class="client-name">John Carter</h3>
+                <div class="stars" aria-label="4 out of 5 stars">
+                  <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">Great, fast and professional service — my car arrived in perfect condition. Highly recommend!</p>
+            <div class="review-actions">
+              <a class="social-btn" href="#" aria-label="Share on Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a class="social-btn" href="#" aria-label="Share on Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+          </article>
+        </li>
+
+        <!-- Review 2 -->
+        <li>
+          <article class="review-card">
+            <div class="review-top">
+              <figure class="client-photo img-holder" style="--width:80; --height:80;">
+                <img src="./assets/images/client2.jpg" alt="Client 2" class="img-cover">
+              </figure>
+              <div class="client-meta">
+                <h3 class="client-name">Maria Gomez</h3>
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">Excellent communication and care. Driver was on time and very polite.</p>
+            <div class="review-actions">
+              <a class="social-btn" href="#" aria-label="Share on Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a class="social-btn" href="#" aria-label="Share on Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+          </article>
+        </li>
+
+        <!-- Review 3 -->
+        <li>
+          <article class="review-card">
+            <div class="review-top">
+              <figure class="client-photo img-holder" style="--width:80; --height:80;">
+                <img src="./assets/images/client3.jpg" alt="Client 3" class="img-cover">
+              </figure>
+              <div class="client-meta">
+                <h3 class="client-name">Alex Brown</h3>
+                <div class="stars" aria-label="4 out of 5 stars">
+                  <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <p class="review-text">Good price and reliable crew. Will use again on next shipment.</p>
+            <div class="review-actions">
+              <a class="social-btn" href="#" aria-label="Share on Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a class="social-btn" href="#" aria-label="Share on Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
 </main>
 
 

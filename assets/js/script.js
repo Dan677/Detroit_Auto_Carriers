@@ -417,3 +417,31 @@ const form = document.getElementById('contact-form');
       modal.style.display = "none";
     });
   });
+// Carousel logic
+const track = document.querySelector('.reviews-track');
+const cards = document.querySelectorAll('.review-card');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+let index = 0;
+const total = cards.length;
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+nextBtn.addEventListener('click', () => {
+  index = (index + 1) % total;
+  updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  index = (index - 1 + total) % total;
+  updateCarousel();
+});
+
+// autoplay (optional)
+setInterval(() => {
+  index = (index + 1) % total;
+  updateCarousel();
+}, 6000);
