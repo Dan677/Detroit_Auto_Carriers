@@ -2018,7 +2018,7 @@ section.newsletter {
   opacity: 0;
   transform: translateY(50px); /* start din jos */
   transition: all 2.1s ease;
-    background-color: aliceblue;
+    background-color: white;
 
 }
 
@@ -4885,7 +4885,111 @@ body.no-scroll {
     font-size: 14px; /* text mai mic pe mobil */
   }
 }
-/* ascuns implicit */
-.call-item-mobile {
-  display: none;
+/* CONTACT SECTION */
+.contact {
+  background-color: var(--alice-blue);
+  text-align: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--white);
+  border: 2px solid var(--dark-orange);
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: var(--prussian-blue);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  transition: all 0.3s ease;
+}
+
+.contact-btn ion-icon {
+  font-size: 22px;
+  color: var(--dark-orange);
+}
+
+.contact-btn:hover {
+  background-color: var(--dark-orange);
+  color: var(--white);
+}
+
+.contact-btn:hover ion-icon {
+  color: var(--white);
+}
+
+/* Stiluri speciale pentru rețele sociale */
+.contact-btn.whatsapp { border-color: #25d366; }
+.contact-btn.whatsapp ion-icon { color: #25d366; }
+.contact-btn.whatsapp:hover { background-color: #25d366; }
+
+.contact-btn.instagram { border-color: #e1306c; }
+.contact-btn.instagram ion-icon { color: #e1306c; }
+.contact-btn.instagram:hover { background-color: #e1306c; }
+
+.contact-btn.facebook { border-color: #1877f2; }
+.contact-btn.facebook ion-icon { color: #1877f2; }
+.contact-btn.facebook:hover { background-color: #1877f2; }
+
+/* CONTACT - DARK MODE */
+.dark-mode .contact {
+  background-color: var(--eerie-black); /* fundal întunecat */
+  color: var(--white);
+}
+
+.dark-mode .contact-btn {
+  background-color: var(--onyx);
+  border-color: var(--dark-orange);
+  color: var(--white);
+}
+
+.dark-mode .contact-btn ion-icon {
+  color: var(--dark-orange);
+}
+
+.dark-mode .contact-btn:hover {
+  background-color: var(--dark-orange);
+  color: var(--white);
+}
+
+.dark-mode .contact-btn.whatsapp {
+  border-color: #25d366;
+}
+.dark-mode .contact-btn.whatsapp ion-icon {
+  color: #25d366;
+}
+.dark-mode .contact-btn.whatsapp:hover {
+  background-color: #25d366;
+  color: #fff;
+}
+
+.dark-mode .contact-btn.instagram {
+  border-color: #e1306c;
+}
+.dark-mode .contact-btn.instagram ion-icon {
+  color: #e1306c;
+}
+.dark-mode .contact-btn.instagram:hover {
+  background-color: #e1306c;
+  color: #fff;
+}
+
+.dark-mode .contact-btn.facebook {
+  border-color: #1877f2;
+}
+.dark-mode .contact-btn.facebook ion-icon {
+  color: #1877f2;
+}
+.dark-mode .contact-btn.facebook:hover {
+  background-color: #1877f2;
+  color: #fff;
 }
