@@ -4876,3 +4876,21 @@ html {
 body.no-scroll {
   overflow: hidden;
 }
+/* Pe desktop: butonul rămâne în header */
+.theme-switch-universal {
+  display: flex;
+  margin-left: 15px; /* ca să fie aliniat frumos */
+}
+
+/* Pe mobil: mutăm switch-ul în meniul burger */
+@media (max-width: 768px) {
+  .theme-switch-universal {
+    display: none; /* ascuns în header */
+  }
+
+  nav .theme-switch-universal {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
