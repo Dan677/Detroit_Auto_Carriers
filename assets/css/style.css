@@ -3716,13 +3716,12 @@ object-fit: cover;
 .logo-mobile {
   display: inline; /* Afișează logo-ul de mobil pe mobil */
 }
-
 @media (min-width: 992px) {
   .logo-mobile {
-    display: none; /* Ascunde logo-ul de mobil pe desktop */
+    display: none;
   }
   .logo-desktop {
-    display: inline; /* Afișează logo-ul de desktop pe desktop */
+    display: inline;
   }
 }
 

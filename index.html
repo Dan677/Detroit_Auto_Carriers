@@ -43,8 +43,13 @@
     <h1>
       <a href="#" class="logo">Detroit Auto Carriers</a>
     </h1>
-    <nav class="navbar" data-navbar>
 
+    <!-- butonul burger trebuie să fie aici -->
+    <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+
+    <nav class="navbar" data-navbar>
       <div class="navbar-top">
         <a href="#" class="logo-container">
           <span class="logo-desktop">D.A.C Detroit Auto Carriers</span>
@@ -55,109 +60,35 @@
           <ion-icon name="close-outline"></ion-icon>
         </button>
       </div>
+
       <ul class="navbar-list">
-
-        <li class="navbar-item">
-          <a href="#home" class="navbar-link" data-nav-link>
-            <span>Home</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-
-        <li class="navbar-item">
-          <a href="#about" class="navbar-link" data-nav-link>
-            <span>About</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-
-        <li class="navbar-item">
-          <a href="#contact" class="navbar-link" data-nav-link>
-            <span>Contact Us</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-
-        <li class="navbar-item">
-          <a href="#service" class="navbar-link" data-nav-link>
-            <span>Services</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-
-        <li class="navbar-item">
-          <a href="#zones" class="navbar-link" data-nav-link>
-            <span>Routes</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-        <li class="navbar-item">
-          <a href="#project" class="navbar-link" data-nav-link>
-            <span>Gallery</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        <li class="navbar-item">
-          <a href="#Posts" class="navbar-link" data-nav-link>
-            <span>Our Posts</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        <li class="navbar-item">
-          <a href="#formular" class="navbar-link" data-nav-link>
-            <span>Get A Quote</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-        <li class="navbar-item">
-          <a href="#reviews" class="navbar-link" data-nav-link>
-            <span>Reviews</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-        <li class="navbar-item">
-          <a href="#faq" class="navbar-link" data-nav-link>
-            <span>FAQS</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
-        <li class="navbar-item">
-          <a href="#advantages" class="navbar-link" data-nav-link>
-            <span>Advantages</span>
-
-            <ion-icon name="chevron-forward"></ion-icon>
-          </a>
-        </li>
+        <li class="navbar-item"><a href="#home" class="navbar-link" data-nav-link><span>Home</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#about" class="navbar-link" data-nav-link><span>About</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#contact" class="navbar-link" data-nav-link><span>Contact Us</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#service" class="navbar-link" data-nav-link><span>Services</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#zones" class="navbar-link" data-nav-link><span>Routes</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#project" class="navbar-link" data-nav-link><span>Gallery</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#Posts" class="navbar-link" data-nav-link><span>Our Posts</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#formular" class="navbar-link" data-nav-link><span>Get A Quote</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#reviews" class="navbar-link" data-nav-link><span>Reviews</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#faq" class="navbar-link" data-nav-link><span>FAQS</span><ion-icon name="chevron-forward"></ion-icon></a></li>
+        <li class="navbar-item"><a href="#advantages" class="navbar-link" data-nav-link><span>Advantages</span><ion-icon name="chevron-forward"></ion-icon></a></li>
 
         <li class="theme-switch-wrapper">
           <label class="theme-switch">
             <input type="checkbox" id="theme-toggle">
             <span class="slider">
-     <span class="icon sun"><ion-icon name="sunny-outline"></ion-icon></span>
-     <span class="icon moon"><ion-icon name="moon-outline"></ion-icon></span>
-    </span>
+              <span class="icon sun"><ion-icon name="sunny-outline"></ion-icon></span>
+              <span class="icon moon"><ion-icon name="moon-outline"></ion-icon></span>
+            </span>
           </label>
         </li>
       </ul>
     </nav>
-    </div>
-
-
-    <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
-      <ion-icon name="menu-outline"></ion-icon>
-    </button>
-
-    <div class="overlay" data-nav-toggler data-overlay></div>
 
   </div>
+
+  <div class="overlay" data-nav-toggler data-overlay></div>
 </header>
 
 
