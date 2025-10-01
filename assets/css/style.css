@@ -5068,3 +5068,25 @@ body.dark-mode .gallery-item {
 .gallery .section-title {
   color: var(--oxford-blue); /* la fel ca la celelalte secțiuni */
 }
+.back-footer-btn {
+  position: fixed;
+  bottom: 90px;          /* mai sus, cu spațiu față de Back to Top */
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+
+.back-footer-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

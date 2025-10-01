@@ -377,3 +377,23 @@ document.addEventListener('DOMContentLoaded', () => {
          }
        }
      }
+const footerBtn = document.querySelector('.back-footer-btn');
+const footer = document.getElementById('site-footer');
+
+// Scroll lin către footer
+footerBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // previne jump instant
+  footer.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Arată/ascunde butonul în funcție de scroll
+window.addEventListener('scroll', () => {
+  const scrollBottom = window.innerHeight + window.scrollY;
+  const footerTop = footer.offsetTop;
+
+  if (scrollBottom >= footerTop) {
+    footerBtn.classList.add('hidden'); // ascunde când ajungi în footer
+  } else {
+    footerBtn.classList.remove('hidden'); // arată în restul paginii
+  }
+});
