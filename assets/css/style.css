@@ -4876,3 +4876,16 @@ html {
 body.no-scroll {
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .navbar {
+    max-width: 240px; /* în loc de 300px */
+  }
+  .navbar-link {
+    padding: 12px; /* mai puțin padding ca să fie mai compact */
+    font-size: 14px; /* text mai mic pe mobil */
+  }
+}
+/* ascuns implicit */
+.call-item-mobile {
+  display: none;
+}

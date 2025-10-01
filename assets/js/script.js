@@ -355,3 +355,25 @@ document.addEventListener('DOMContentLoaded', () => {
        card.classList.toggle("flipped");
      });
    });
+    let touchStartX = 0;
+     let touchEndX = 0;
+
+     if (navbar && overlay) {
+       navbar.addEventListener("touchstart", (e) => {
+         touchStartX = e.changedTouches[0].screenX;
+       });
+
+       navbar.addEventListener("touchend", (e) => {
+         touchEndX = e.changedTouches[0].screenX;
+         handleSwipe();
+       });
+
+       function handleSwipe() {
+         // dacă utilizatorul a tras spre stânga mai mult de 50px
+         if (touchStartX - touchEndX > 50) {
+           navbar.classList.remove("active");
+           overlay.classList.remove("active");
+           document.body.classList.remove("no-scroll");
+         }
+       }
+     }
