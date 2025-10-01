@@ -1468,7 +1468,9 @@ padding: 10px 18px;
 }
 
 
-.project { background-color: var(--alice-blue); }
+.project {
+  background-color: #d6eaff; /* light pastel blue */
+}
 
 
 
