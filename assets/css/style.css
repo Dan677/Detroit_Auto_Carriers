@@ -4994,3 +4994,77 @@ body.no-scroll {
   background-color: #1877f2;
   color: #fff;
 }
+/* ======================
+   New Gallery Section
+   ====================== */
+.gallery {
+  background-color: #dbeafe; /* nuanță între alb și aliceblue */
+  padding: 60px 0;
+  transition: background-color 0.3s ease;
+}
+
+/* păstrăm stilul consistent cu restul site-ului */
+.gallery .section-subtitle {
+  color: var(--dark-orange); /* portocaliu ca în restul */
+  text-align: center;
+}
+
+.gallery .section-title {
+  color: var(--oxford-blue);
+  text-align: center;
+}
+
+.gallery .section-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: var(--oxford-blue);
+}
+
+/* grid responsive */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark mode */
+body.dark-mode .gallery {
+  background-color: #1c1c1c; /* fundal închis */
+}
+
+body.dark-mode .gallery .section-subtitle {
+  color: var(--dark-orange); /* păstrăm portocaliul */
+}
+
+body.dark-mode .gallery .section-title,
+body.dark-mode .gallery .section-text {
+  color: #fff;
+}
+
+body.dark-mode .gallery-item {
+  background: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+.gallery .section-title {
+  color: var(--oxford-blue); /* la fel ca la celelalte secțiuni */
+}
