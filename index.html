@@ -732,7 +732,7 @@
       <p class="section-text">
         A representative will contact you shortly.
       </p>
-      <form id="contact-form" class="contact-form">
+      <form id="contact-form" class="contact-form" action="send_mail.php" method="POST">
         <div class="form-group">
           <label for="email" class="form-label">Email Address:</label>
           <input type="email" name="email" id="email" required placeholder="example@mail.com">
@@ -743,22 +743,19 @@
           <input type="tel" name="phone" id="phone" required placeholder="Ex: +1 (555) 123-4567">
         </div>
 
-        <!-- Selectare serviciu -->
         <div class="form-group">
           <label for="service" class="form-label">Select Desired Service:</label>
           <select name="service" id="service" required>
             <option value="" disabled selected>-- Please choose a service --</option>
-            <option value="vehicle_transport">Vehicle Transport </option>
-            <option value="title_registration">Title & Registration </option>
-            <option value="vehicle_storage">Vehicle Storage </option>
-            <option value="care_maintenance">Care & Maintenance </option>
-            <option value="ev_logistics">EV Logistics </option>
+            <option value="vehicle_transport">Vehicle Transport</option>
+            <option value="title_registration">Urgent Shipping</option>
+            <option value="vehicle_storage">Vehicle Storage</option>
+            <option value="ev_logistics">EV Logistics</option>
             <option value="vehicle_repossession">Vehicle Repossession</option>
-            <option value="home_delivery">Home Delivery & Pickup </option>
+            <option value="home_delivery">Home Delivery & Pickup</option>
           </select>
         </div>
 
-        <!-- Selectare viteză serviciu -->
         <div class="form-group">
           <label for="speed" class="form-label">Speed of Service Preferred:</label>
           <select name="speed" id="speed" required>
